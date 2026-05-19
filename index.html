@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Moonlight Étoile — Thoughtful skincare rituals for luminous, healthy skin. Formulated with botanicals sourced from certified ethical suppliers." />
+  <title>Moonlight Étoile — Radiant Skincare Rituals</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Moonlight Étoile home">Moonlight Étoile</a>
+
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-icon" aria-label="View cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" aria-label="Cart items">0</span>
+        </a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Mobile Nav ─────────────────────────────────────── -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <div class="mobile-nav__footer">
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">TikTok</a>
+    </div>
+  </nav>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="page-content">
+
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="t-label" data-reveal>Botanical — Ethical — Intentional</p>
+          <h1 class="hero__headline t-display" data-reveal data-reveal-delay="1">
+            Skin that<br><em>breathes</em><br>deeply.
+          </h1>
+          <p class="hero__body t-body" data-reveal data-reveal-delay="2">
+            Each formula begins with a single question:<br>what does skin actually need right now?
+          </p>
+          <div class="hero__ctas" data-reveal data-reveal-delay="3">
+            <a href="products.html" class="btn btn--primary">Shop the ritual</a>
+            <a href="about.html" class="btn btn--outline">Our philosophy</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal data-reveal-delay="2">
+          <div class="hero__image-wrap">
+            <div class="hero__image-placeholder" aria-hidden="true">
+              <img
+                src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=840&h=1120&fit=crop"
+                alt=""
+                class="img-cover"
+                loading="eager"
+                fetchpriority="high"
+              />
+              <span class="hero__image-label">Sérum Lumière</span>
+            </div>
+          </div>
+          <div class="hero__stat-card" data-reveal data-reveal-delay="4">
+            <p class="hero__stat-number">94<span>%</span></p>
+            <p class="hero__stat-label">saw visible radiance<br>within 14 days</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- Marquee Strip -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- duplicated for seamless loop -->
+        <span class="marquee-item"><span class="marquee-dot"></span>Dermatologist tested</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Cruelty free</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Fragrance optional</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Sustainable packaging</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Certified botanicals</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Formulated in Seoul</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Dermatologist tested</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Cruelty free</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Fragrance optional</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Sustainable packaging</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Certified botanicals</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Formulated in Seoul</span>
+      </div>
+    </div>
+
+    <!-- Featured Products -->
+    <section class="section" id="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__left">
+            <p class="t-label" data-reveal>Best Sellers</p>
+            <h2 id="featured-heading" data-reveal data-reveal-delay="1">
+              Start your<br>ritual here.
+            </h2>
+          </div>
+          <a href="products.html" class="btn btn--outline" data-reveal>View all products</a>
+        </div>
+
+        <div class="products-grid" role="list">
+          <!-- Card 1 -->
+          <article class="product-card" role="listitem" data-reveal>
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sérum Lumière" loading="eager" class="img-cover">
+              <span class="product-card__badge product-card__badge--new">New</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Sérum Lumière" data-price="68">Quick add — $68</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Sérum Lumière</h3>
+              <p class="product-card__desc">Vitamin C brightening treatment</p>
+              <p class="product-card__price">$68</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="product-card" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Barrier Dew Cream" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Barrier Dew Cream" data-price="54">Quick add — $54</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Barrier Dew Cream</h3>
+              <p class="product-card__desc">Deep moisture, ceramide-rich</p>
+              <p class="product-card__price">$54</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="product-card" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Petal Toner Essence" loading="lazy" class="img-cover">
+              <span class="product-card__badge">Bestseller</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Petal Toner Essence" data-price="42">Quick add — $42</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Petal Toner Essence</h3>
+              <p class="product-card__desc">Rose + Centella first essence</p>
+              <p class="product-card__price">$42 <s>$58</s></p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="product-card" role="listitem" data-reveal data-reveal-delay="3">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Midnight Repair Oil" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Midnight Repair Oil" data-price="76">Quick add — $76</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Midnight Repair Oil</h3>
+              <p class="product-card__desc">Retinol-boosted facial oil</p>
+              <p class="product-card__price">$76</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy / Split strip -->
+    <section class="philosophy-strip">
+      <div class="philosophy-strip__text" data-reveal>
+        <p class="t-label">Our conviction</p>
+        <h2 class="t-display">Less, but<br><em>precisely right.</em></h2>
+        <p class="t-body" style="margin-top:1.5rem;max-width:42ch;">
+          We edit obsessively. Every ingredient earns its place in the formula — nothing decorative, nothing unnecessary. The result is skincare that works without asking you to trust us.
+        </p>
+        <a href="about.html" class="btn btn--outline" style="margin-top:2.25rem">Read our story</a>
+      </div>
+      <div class="philosophy-strip__visual" aria-hidden="true">
+        <div class="philosophy-strip__grid">
+          <div class="philosophy-strip__tile" style="grid-area:a;"><img src="https://images.pexels.com/photos/5069291/pexels-photo-5069291.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="" loading="lazy" class="img-cover"></div>
+          <div class="philosophy-strip__tile" style="grid-area:b;"><img src="https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="" loading="lazy" class="img-cover"></div>
+          <div class="philosophy-strip__tile" style="background:var(--clr-surface-2);grid-area:c;display:flex;align-items:center;justify-content:center;">
+            <p style="font-family:var(--ff-display);font-size:2.5rem;font-weight:300;color:var(--clr-ink-soft);">14</p>
+          </div>
+          <div class="philosophy-strip__tile" style="grid-area:d;"><img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="" loading="lazy" class="img-cover"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__left">
+            <p class="t-label" data-reveal>Real results</p>
+            <h2 id="testimonials-heading" data-reveal data-reveal-delay="1">What our<br>community says.</h2>
+          </div>
+        </div>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial" data-reveal>
+            <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+            <p class="testimonial__body">"I've tried six vitamin C serums. The Sérum Lumière is the first one that didn't irritate my rosacea-prone skin and still visibly worked within two weeks."</p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar"><img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Nara Lindqvist"></div>
+              <div>
+                <p class="testimonial__name">Nara Lindqvist</p>
+                <p class="t-muted">Stockholm · Verified buyer</p>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial testimonial--featured" data-reveal data-reveal-delay="1">
+            <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+            <p class="testimonial__body">"The Barrier Dew Cream feels like nothing I've used before — it's almost weightless but my skin has genuinely never felt more comfortable through a dry Seoul winter."</p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mirae Kwon"></div>
+              <div>
+                <p class="testimonial__name">Mirae Kwon</p>
+                <p class="t-muted">Seoul · Verified buyer</p>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial" data-reveal data-reveal-delay="2">
+            <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+            <p class="testimonial__body">"Finally a brand that doesn't overclaim. The Petal Essence is exactly what it says — gentle, effective, and my skin texture improved noticeably after three weeks."</p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Théa Arno"></div>
+              <div>
+                <p class="testimonial__name">Théa Arno</p>
+                <p class="t-muted">Lyon · Verified buyer</p>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section section--sm">
+      <div class="container">
+        <div class="newsletter-card" data-reveal>
+          <div class="newsletter-card__content">
+            <p class="t-label">Early access</p>
+            <h2 class="t-heading" style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:300;margin-top:0.75rem;">
+              The ritual,<br>delivered monthly.
+            </h2>
+            <p class="t-body" style="margin-top:0.75rem;max-width:44ch;">
+              Formula notes, ingredient stories, and early access to new launches — no noise, just depth.
+            </p>
+          </div>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <div class="newsletter-form__row">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input
+                id="newsletter-email"
+                type="email"
+                class="newsletter-form__input"
+                placeholder="your@email.com"
+                autocomplete="email"
+                required
+              />
+              <button type="submit" class="btn btn--primary">Subscribe</button>
+            </div>
+            <p class="newsletter-form__note">No spam, ever. Unsubscribe in one click.</p>
+            <p class="newsletter-form__success" id="newsletter-success" hidden>
+              You're in. Welcome to the ritual.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Moonlight Étoile</p>
+          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html#serums">Serums</a></li>
+            <li><a href="products.html#moisturisers">Moisturisers</a></li>
+            <li><a href="products.html#essences">Essences</a></li>
+            <li><a href="products.html#oils">Facial Oils</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Brand</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#ingredients">Ingredients</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Skin Quiz</a></li>
+            <li><a href="#">Ingredient Glossary</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Preferences</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Newsletter form
+    const form = document.getElementById('newsletter-form');
+    const success = document.getElementById('newsletter-success');
+    form?.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (!email) return;
+      success.hidden = false;
+      form.querySelector('input').value = '';
+      window.MoonlightEtoile?.showToast('Welcome to the Moonlight Étoile ritual!');
+    });
+  </script>
+</body>
+</html>

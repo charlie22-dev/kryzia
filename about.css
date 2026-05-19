@@ -1,0 +1,218 @@
+/* ============================================================
+   Moonlight Étoile — About page
+   ============================================================ */
+
+/* Origin grid */
+.about-origin__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-origin__visual {
+  position: relative;
+  height: 560px;
+}
+.about-origin__image-main {
+  position: absolute;
+  top: 0; left: 0;
+  width: 75%; height: 80%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.about-origin__image-accent {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 52%; height: 50%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+.about-origin__placeholder { display: block; }
+
+.about-origin__heading {
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about-origin__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Stats bar */
+.stats-bar {
+  background-color: var(--clr-ink);
+  padding-block: 3.5rem;
+}
+.stats-bar__grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.stat-item { text-align: center; flex: 1; }
+.stat-item__number {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--clr-white);
+  line-height: 1;
+}
+.stat-item__number span { color: var(--clr-rose); font-size: 0.65em; }
+.stat-item__label {
+  font-size: 0.8rem;
+  color: rgba(255, 252, 249, 0.45);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+.stat-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 252, 249, 0.12);
+  flex-shrink: 0;
+}
+
+/* Ingredients list */
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--clr-border);
+}
+.ingredient-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  padding-block: 2.25rem;
+  border-bottom: 1px solid var(--clr-border);
+  transition: background-color 250ms ease;
+}
+.ingredient-row:hover { background-color: var(--clr-surface); }
+
+.ingredient-row__swatch {
+  width: 60px; height: 60px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.ingredient-row__name {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--clr-ink);
+  margin-bottom: 0.2rem;
+}
+.ingredient-row__source {
+  font-size: 0.75rem;
+  color: var(--clr-rose);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.ingredient-row__desc { max-width: 56ch; }
+.ingredient-row__used-in {
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  padding-top: 0.25rem;
+  min-width: 160px;
+}
+.ingredient-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--clr-ink-soft);
+  background-color: var(--clr-surface-2);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-xl);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+.ingredient-tag:hover {
+  background-color: var(--clr-rose-light);
+  color: var(--clr-ink);
+}
+
+/* Sustainability section */
+.sustainability-section {
+  background-color: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  padding-block: var(--section-gap);
+}
+.sustainability-section__inner {
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+.sustainability-section__header { margin-bottom: 4rem; }
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 4rem;
+}
+.sustainability-item__icon {
+  margin-bottom: 1.25rem;
+}
+.sustainability-item__title {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--clr-ink);
+  margin-bottom: 0.75rem;
+}
+.sustainability-item__desc { max-width: 42ch; }
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.team-member { display: flex; flex-direction: column; gap: 0.75rem; }
+.team-member__avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+.team-member__initials {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--clr-ink-soft);
+}
+.team-member__name {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--clr-ink);
+}
+.team-member__bio { max-width: 38ch; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-origin__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-origin__visual { height: 320px; }
+  .stats-bar__grid { flex-wrap: wrap; gap: 2rem; }
+  .stat-divider { display: none; }
+  .stat-item { flex-basis: calc(50% - 1rem); }
+  .sustainability-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .ingredient-row { grid-template-columns: 44px 1fr; }
+  .ingredient-row__used-in { display: none; }
+  .team-grid { grid-template-columns: 1fr; }
+  .stat-item { flex-basis: 100%; }
+}

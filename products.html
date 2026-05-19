@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shop Moonlight Étoile's full range of botanical serums, moisturisers, essences, and facial oils. Formulated with certified ingredients." />
+  <title>Products — Moonlight Étoile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-icon" aria-label="View cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <div class="mobile-nav__footer">
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">TikTok</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="t-label page-hero__label" data-reveal>The full collection</p>
+        <h1 data-reveal data-reveal-delay="1">Every<br><em style="font-style:italic;color:var(--clr-rose);">formula.</em></h1>
+        <p data-reveal data-reveal-delay="2">Thirty-one ingredients maximum, per product. Always disclosed. Always purposeful.</p>
+      </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar">
+      <div class="container">
+        <div class="filter-bar__inner">
+          <div class="filter-tabs" role="tablist" aria-label="Filter products by category">
+            <button class="filter-tab active" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="serum" id="serums">Serums</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="moisturiser" id="moisturisers">Moisturisers</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="essence" id="essences">Essences</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="oil" id="oils">Facial Oils</button>
+            <button class="filter-tab" role="tab" aria-selected="false" data-filter="mask">Masks</button>
+          </div>
+          <div class="filter-bar__count">
+            <span id="product-count">12</span> products
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <section class="section" aria-label="Products">
+      <div class="container">
+        <div class="catalog-grid" id="catalog-grid">
+
+          <!-- Serums -->
+          <article class="product-card catalog-card" data-category="serum" data-reveal>
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sérum Lumière" loading="eager" class="img-cover">
+              <span class="product-card__badge product-card__badge--new">New</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Sérum Lumière" data-price="68">Quick add — $68</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Serum</p>
+              <h2 class="product-card__name">Sérum Lumière</h2>
+              <p class="product-card__desc">Vitamin C 15% + Ferulic brightening treatment</p>
+              <p class="product-card__price">$68</p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="serum" data-reveal data-reveal-delay="1">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/5069291/pexels-photo-5069291.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Calm Peptide Serum" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Calm Peptide Serum" data-price="82">Quick add — $82</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Serum</p>
+              <h2 class="product-card__name">Calm Peptide Serum</h2>
+              <p class="product-card__desc">Hexapeptide-10 + Niacinamide barrier repair</p>
+              <p class="product-card__price">$82</p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="serum" data-reveal data-reveal-delay="2">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="HA Plump Serum" loading="lazy" class="img-cover">
+              <span class="product-card__badge">Bestseller</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="HA Plump Serum" data-price="58">Quick add — $58</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Serum</p>
+              <h2 class="product-card__name">HA Plump Serum</h2>
+              <p class="product-card__desc">Multi-weight Hyaluronic Acid deep hydration</p>
+              <p class="product-card__price">$58</p>
+            </div>
+          </article>
+
+          <!-- Moisturisers -->
+          <article class="product-card catalog-card" data-category="moisturiser" data-reveal>
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Barrier Dew Cream" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Barrier Dew Cream" data-price="54">Quick add — $54</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Moisturiser</p>
+              <h2 class="product-card__name">Barrier Dew Cream</h2>
+              <p class="product-card__desc">Ceramide NP + Squalane deep moisture</p>
+              <p class="product-card__price">$54</p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="moisturiser" data-reveal data-reveal-delay="1">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Cloud Gel Moisturiser" loading="lazy" class="img-cover">
+              <span class="product-card__badge product-card__badge--new">New</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Cloud Gel Moisturiser" data-price="48">Quick add — $48</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Moisturiser</p>
+              <h2 class="product-card__name">Cloud Gel Moisturiser</h2>
+              <p class="product-card__desc">Oil-free, weightless gel for combination skin</p>
+              <p class="product-card__price">$48</p>
+            </div>
+          </article>
+
+          <!-- Essences -->
+          <article class="product-card catalog-card" data-category="essence" data-reveal>
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4041393/pexels-photo-4041393.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Petal Toner Essence" loading="lazy" class="img-cover">
+              <span class="product-card__badge">Bestseller</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Petal Toner Essence" data-price="42">Quick add — $42</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Essence</p>
+              <h2 class="product-card__name">Petal Toner Essence</h2>
+              <p class="product-card__desc">Rose + Centella asiatica first essence</p>
+              <p class="product-card__price">$42 <s>$58</s></p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="essence" data-reveal data-reveal-delay="1">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4465158/pexels-photo-4465158.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Green Tea Microbiome Essence" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Green Tea Microbiome Essence" data-price="46">Quick add — $46</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Essence</p>
+              <h2 class="product-card__name">Green Tea Microbiome Essence</h2>
+              <p class="product-card__desc">Probiotic-fermented green tea extract</p>
+              <p class="product-card__price">$46</p>
+            </div>
+          </article>
+
+          <!-- Oils -->
+          <article class="product-card catalog-card" data-category="oil" data-reveal>
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Midnight Repair Oil" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Midnight Repair Oil" data-price="76">Quick add — $76</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Facial Oil</p>
+              <h2 class="product-card__name">Midnight Repair Oil</h2>
+              <p class="product-card__desc">Bakuchiol + Sea buckthorn overnight renewal</p>
+              <p class="product-card__price">$76</p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="oil" data-reveal data-reveal-delay="1">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Golden Jojoba Glow Oil" loading="lazy" class="img-cover">
+              <span class="product-card__badge product-card__badge--new">New</span>
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Golden Jojoba Glow Oil" data-price="64">Quick add — $64</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Facial Oil</p>
+              <h2 class="product-card__name">Golden Jojoba Glow Oil</h2>
+              <p class="product-card__desc">Jojoba + rosehip for morning luminosity</p>
+              <p class="product-card__price">$64</p>
+            </div>
+          </article>
+
+          <!-- Masks -->
+          <article class="product-card catalog-card" data-category="mask" data-reveal>
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Kaolin Detox Mask" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Kaolin Detox Mask" data-price="38">Quick add — $38</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Mask</p>
+              <h2 class="product-card__name">Kaolin Detox Mask</h2>
+              <p class="product-card__desc">White kaolin + activated willow bark</p>
+              <p class="product-card__price">$38</p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="mask" data-reveal data-reveal-delay="1">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/5175516/pexels-photo-5175516.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Rose Glow Sleeping Mask" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Rose Glow Sleeping Mask" data-price="44">Quick add — $44</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Mask</p>
+              <h2 class="product-card__name">Rose Glow Sleeping Mask</h2>
+              <p class="product-card__desc">Leave-on overnight rose + Sodium PCA</p>
+              <p class="product-card__price">$44</p>
+            </div>
+          </article>
+
+          <article class="product-card catalog-card" data-category="moisturiser" data-reveal data-reveal-delay="2">
+            <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/6621374/pexels-photo-6621374.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sensitive Skin Balm" loading="lazy" class="img-cover">
+              <div class="product-card__quick-add">
+                <button class="btn" data-add-to-cart data-name="Sensitive Skin Balm" data-price="52">Quick add — $52</button>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Moisturiser</p>
+              <h2 class="product-card__name">Sensitive Skin Balm</h2>
+              <p class="product-card__desc">Colloidal oat + allantoin calming balm</p>
+              <p class="product-card__price">$52</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty state (shown when no filter matches) -->
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--clr-border)" stroke-width="1.2"><circle cx="24" cy="24" r="20"/><path d="M16 24h16M24 16v16"/></svg>
+          </div>
+          <p class="empty-state__text">No products in this category yet.</p>
+          <button class="btn btn--outline" onclick="document.querySelector('[data-filter=all]').click()">Show all products</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Moonlight Étoile</p>
+          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html#serums">Serums</a></li>
+            <li><a href="products.html#moisturisers">Moisturisers</a></li>
+            <li><a href="products.html#essences">Essences</a></li>
+            <li><a href="products.html#oils">Facial Oils</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Brand</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#ingredients">Ingredients</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Skin Quiz</a></li>
+            <li><a href="#">Ingredient Glossary</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Preferences</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter tabs
+    const tabs    = document.querySelectorAll('.filter-tab');
+    const cards   = document.querySelectorAll('.catalog-card');
+    const counter = document.getElementById('product-count');
+    const empty   = document.getElementById('empty-state');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const filter = tab.dataset.filter;
+        let visible = 0;
+
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+
+        counter.textContent = visible;
+        empty.hidden = visible > 0;
+      });
+    });
+  </script>
+</body>
+</html>

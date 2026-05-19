@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about Moonlight Étoile's philosophy, ingredient sourcing, sustainability commitments, and the people behind every formula." />
+  <title>About — Moonlight Étoile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-icon" aria-label="View cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <div class="mobile-nav__footer">
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">TikTok</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="t-label page-hero__label" data-reveal>Founded 2019 · Seoul</p>
+        <h1 data-reveal data-reveal-delay="1">Built on<br><em style="font-style:italic;color:var(--clr-rose);">one question.</em></h1>
+        <p data-reveal data-reveal-delay="2">What does skin actually need — and what can we remove without consequence?</p>
+      </div>
+    </section>
+
+    <!-- Origin story -->
+    <section class="section about-origin">
+      <div class="container">
+        <div class="about-origin__grid">
+          <div class="about-origin__visual" aria-hidden="true" data-reveal>
+            <div class="about-origin__image-main">
+              <img src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop" alt="Moonlight Étoile laboratory" loading="lazy" class="img-cover" style="border-radius:var(--radius-lg);width:100%;height:100%;display:block;">
+            </div>
+            <div class="about-origin__image-accent">
+              <img src="https://images.pexels.com/photos/4041394/pexels-photo-4041394.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop" alt="Natural botanical ingredients" loading="lazy" class="img-cover" style="border-radius:var(--radius-md);width:100%;height:100%;display:block;">
+            </div>
+          </div>
+
+          <div class="about-origin__text" data-reveal data-reveal-delay="1">
+            <p class="t-label">Our origin</p>
+            <h2 class="about-origin__heading t-display">
+              Every ingredient<br>answered for.
+            </h2>
+            <div class="about-origin__body">
+              <p class="t-body">
+                Moonlight Étoile began in a small laboratory in Mapo-gu, Seoul, where our founder Yuna Bae spent three years reformulating what a "complete" skincare line could mean if you removed everything decorative.
+              </p>
+              <p class="t-body">
+                The first product — our Petal Toner Essence — took eleven months and forty-three iterations. Not because we couldn't settle, but because we were waiting for data. Every formula passed independent irritancy testing before it left the lab.
+              </p>
+              <p class="t-body">
+                Today our team spans Seoul, Berlin, and São Paulo. The rule hasn't changed: if we can't explain exactly why an ingredient is there, it doesn't stay.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="container">
+        <div class="stats-bar__grid">
+          <div class="stat-item" data-reveal>
+            <p class="stat-item__number">31</p>
+            <p class="stat-item__label">Max ingredients<br>per formula</p>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-reveal data-reveal-delay="1">
+            <p class="stat-item__number">43<span>+</span></p>
+            <p class="stat-item__label">Iterations on average<br>before launch</p>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-reveal data-reveal-delay="2">
+            <p class="stat-item__number">94<span>%</span></p>
+            <p class="stat-item__label">Natural or<br>nature-derived ingredients</p>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" data-reveal data-reveal-delay="3">
+            <p class="stat-item__number">0</p>
+            <p class="stat-item__label">Ingredients we can't<br>fully explain</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ingredients section -->
+    <section class="section" id="ingredients" aria-labelledby="ingredients-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__left">
+            <p class="t-label" data-reveal>What's inside</p>
+            <h2 id="ingredients-heading" data-reveal data-reveal-delay="1">Hero<br>ingredients.</h2>
+          </div>
+        </div>
+
+        <div class="ingredients-list">
+          <div class="ingredient-row" data-reveal>
+            <div class="ingredient-row__swatch" style="background:linear-gradient(135deg,#f5e8d0,#e8d0a8);" aria-hidden="true"></div>
+            <div class="ingredient-row__content">
+              <h3 class="ingredient-row__name">Bakuchiol</h3>
+              <p class="ingredient-row__source">Babchi plant · India</p>
+              <p class="ingredient-row__desc t-body">A plant-derived retinol alternative that stimulates collagen without the photosensitivity or irritation associated with retinoids. Used in our Midnight Repair Oil at 1% concentration.</p>
+            </div>
+            <div class="ingredient-row__used-in">
+              <p class="t-muted" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Used in</p>
+              <a href="products.html" class="ingredient-tag">Midnight Repair Oil</a>
+            </div>
+          </div>
+
+          <div class="ingredient-row" data-reveal data-reveal-delay="1">
+            <div class="ingredient-row__swatch" style="background:linear-gradient(135deg,#f0ddd9,#e4c9c2);" aria-hidden="true"></div>
+            <div class="ingredient-row__content">
+              <h3 class="ingredient-row__name">Rosa Damascena Extract</h3>
+              <p class="ingredient-row__source">Damask rose · Bulgaria</p>
+              <p class="ingredient-row__desc t-body">Steam-distilled from hand-harvested petals, this extract delivers a concentrated dose of antioxidants and natural humectants. We use cold-processed extraction to preserve bioactive compounds.</p>
+            </div>
+            <div class="ingredient-row__used-in">
+              <p class="t-muted" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Used in</p>
+              <a href="products.html" class="ingredient-tag">Petal Toner Essence</a>
+            </div>
+          </div>
+
+          <div class="ingredient-row" data-reveal data-reveal-delay="2">
+            <div class="ingredient-row__swatch" style="background:linear-gradient(135deg,#e4eee8,#cfe0d6);" aria-hidden="true"></div>
+            <div class="ingredient-row__content">
+              <h3 class="ingredient-row__name">Centella Asiatica</h3>
+              <p class="ingredient-row__source">Tiger grass · Korea</p>
+              <p class="ingredient-row__desc t-body">Madecassoside and asiaticoside compounds rebuild the skin's barrier through collagen synthesis. Clinically validated for reducing redness in sensitive and reactive skin types.</p>
+            </div>
+            <div class="ingredient-row__used-in">
+              <p class="t-muted" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Used in</p>
+              <a href="products.html" class="ingredient-tag">Petal Toner Essence</a>
+              <a href="products.html" class="ingredient-tag">Calm Peptide Serum</a>
+            </div>
+          </div>
+
+          <div class="ingredient-row" data-reveal data-reveal-delay="3">
+            <div class="ingredient-row__swatch" style="background:linear-gradient(135deg,#f2e4d8,#ead0c0);" aria-hidden="true"></div>
+            <div class="ingredient-row__content">
+              <h3 class="ingredient-row__name">Ceramide NP</h3>
+              <p class="ingredient-row__source">Synthetic identical · Germany</p>
+              <p class="ingredient-row__desc t-body">Bioidentical to human skin ceramides, NP (non-hydroxy phytosphingosine) rebuilds the intercellular lipid matrix. We use the pharmaceutical-grade fermentation-derived form, not plant-extracted.</p>
+            </div>
+            <div class="ingredient-row__used-in">
+              <p class="t-muted" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem">Used in</p>
+              <a href="products.html" class="ingredient-tag">Barrier Dew Cream</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability -->
+    <section class="sustainability-section" id="sustainability" aria-labelledby="sustainability-heading">
+      <div class="container">
+        <div class="sustainability-section__inner">
+          <div class="sustainability-section__header" data-reveal>
+            <p class="t-label">How we operate</p>
+            <h2 id="sustainability-heading" class="t-display" style="font-size:clamp(2.5rem,5vw,4rem);margin-top:0.75rem;">
+              The work<br>behind the work.
+            </h2>
+          </div>
+
+          <div class="sustainability-grid">
+            <div class="sustainability-item" data-reveal>
+              <div class="sustainability-item__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="var(--clr-rose)" stroke-width="1.2" stroke-linecap="round"><path d="M16 4c0 0-10 8-10 16a10 10 0 0 0 20 0C26 12 16 4 16 4z"/></svg>
+              </div>
+              <h3 class="sustainability-item__title">Post-consumer recycled packaging</h3>
+              <p class="sustainability-item__desc t-body">All outer cartons use minimum 87% PCR board. Bottles are refillable by design — our Seoul refill station launched in 2023, with Berlin opening 2025.</p>
+            </div>
+
+            <div class="sustainability-item" data-reveal data-reveal-delay="1">
+              <div class="sustainability-item__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="var(--clr-rose)" stroke-width="1.2" stroke-linecap="round"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/></svg>
+              </div>
+              <h3 class="sustainability-item__title">Carbon-neutral shipping since 2022</h3>
+              <p class="sustainability-item__desc t-body">We offset 100% of last-mile emissions through verified reforestation projects in South Korea's Jirisan National Park and Brazil's Atlantic Forest.</p>
+            </div>
+
+            <div class="sustainability-item" data-reveal data-reveal-delay="2">
+              <div class="sustainability-item__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="var(--clr-rose)" stroke-width="1.2" stroke-linecap="round"><path d="M4 20l7-7 5 5 7-10"/><path d="M20 8h8v8"/></svg>
+              </div>
+              <h3 class="sustainability-item__title">Full ingredient traceability</h3>
+              <p class="sustainability-item__desc t-body">Every botanical ingredient lists its country of origin, supplier, and extraction method on our website. We publish supplier audit results annually.</p>
+            </div>
+
+            <div class="sustainability-item" data-reveal data-reveal-delay="3">
+              <div class="sustainability-item__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="var(--clr-rose)" stroke-width="1.2" stroke-linecap="round"><path d="M10 16a6 6 0 0 1 12 0"/><path d="M16 22v4M8 22l-2 3M24 22l2 3"/></svg>
+              </div>
+              <h3 class="sustainability-item__title">No animal testing, ever</h3>
+              <p class="sustainability-item__desc t-body">We are Leaping Bunny certified. We do not sell in markets that require mandatory animal testing, and we never will, regardless of commercial opportunity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__left">
+            <p class="t-label" data-reveal>The people</p>
+            <h2 id="team-heading" data-reveal data-reveal-delay="1">Small team.<br>Long thinking.</h2>
+          </div>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-member" data-reveal>
+            <div class="team-member__avatar" style="overflow:hidden;">
+              <img src="https://randomuser.me/api/portraits/women/51.jpg" alt="Yuna Bae" loading="lazy">
+            </div>
+            <h3 class="team-member__name">Yuna Bae</h3>
+            <p class="team-member__role t-label" style="color:var(--clr-ink-muted)">Founder &amp; Head Formulator</p>
+            <p class="team-member__bio t-body">PhD in Cosmetic Chemistry, SNU. Former senior formulator at Amorepacific. Eleven years of barrier-function research before founding Moonlight Étoile.</p>
+          </div>
+
+          <div class="team-member" data-reveal data-reveal-delay="1">
+            <div class="team-member__avatar" style="overflow:hidden;">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rafael Voigt" loading="lazy">
+            </div>
+            <h3 class="team-member__name">Rafael Voigt</h3>
+            <p class="team-member__role t-label" style="color:var(--clr-ink-muted)">Head of Ingredient Sourcing</p>
+            <p class="team-member__bio t-body">Based in Berlin. Built our supplier audit framework from scratch. Speaks with every grower personally before we sign a sourcing contract.</p>
+          </div>
+
+          <div class="team-member" data-reveal data-reveal-delay="2">
+            <div class="team-member__avatar" style="overflow:hidden;">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Camille Fournier" loading="lazy">
+            </div>
+            <h3 class="team-member__name">Camille Fournier</h3>
+            <p class="team-member__role t-label" style="color:var(--clr-ink-muted)">Clinical Research Lead</p>
+            <p class="team-member__bio t-body">Former researcher at L'Oréal Paris R&amp;I. Leads all independent efficacy studies and owns our relationship with dermatology testing partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Moonlight Étoile</p>
+          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">Serums</a></li>
+            <li><a href="products.html">Moisturisers</a></li>
+            <li><a href="products.html">Essences</a></li>
+            <li><a href="products.html">Facial Oils</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Brand</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#ingredients">Ingredients</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Skin Quiz</a></li>
+            <li><a href="#">Ingredient Glossary</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Preferences</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your Moonlight Étoile shopping cart — review your ritual before checkout." />
+  <title>Cart — Moonlight Étoile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-icon" aria-label="View cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <div class="mobile-nav__footer">
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">TikTok</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Page Hero (compact) -->
+    <div class="cart-page-header">
+      <div class="container">
+        <p class="t-label" data-reveal>Your selection</p>
+        <h1 class="cart-page-title" data-reveal data-reveal-delay="1">Your cart</h1>
+      </div>
+    </div>
+
+    <section class="cart-section section--sm">
+      <div class="container">
+
+        <!-- Cart layout: items + summary -->
+        <div class="cart-layout" id="cart-layout">
+
+          <!-- Items column -->
+          <div class="cart-items" id="cart-items" aria-live="polite" aria-label="Cart items">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Summary column -->
+          <aside class="cart-summary" id="cart-summary" aria-label="Order summary">
+            <h2 class="cart-summary__title">Order summary</h2>
+
+            <div class="cart-summary__rows" id="summary-rows">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="cart-summary__divider"></div>
+
+            <div class="cart-summary__total-row">
+              <span class="cart-summary__total-label">Total</span>
+              <span class="cart-summary__total-value" id="cart-total">$0.00</span>
+            </div>
+
+            <p class="cart-summary__note t-muted">Shipping and taxes calculated at checkout.</p>
+
+            <!-- Promo code -->
+            <div class="cart-promo">
+              <form class="cart-promo__form" id="promo-form" novalidate>
+                <label for="promo-input" class="form-label" style="font-size:0.8rem">Promo code</label>
+                <div class="cart-promo__row">
+                  <input
+                    type="text"
+                    id="promo-input"
+                    placeholder="GLOW10"
+                    class="cart-promo__input"
+                    autocomplete="off"
+                    style="text-transform:uppercase"
+                  />
+                  <button type="submit" class="btn btn--outline" style="white-space:nowrap;padding-inline:1rem;">Apply</button>
+                </div>
+                <span class="cart-promo__feedback" id="promo-feedback" role="alert"></span>
+              </form>
+            </div>
+
+            <button class="btn btn--primary cart-checkout-btn" id="checkout-btn">
+              Proceed to checkout
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </button>
+
+            <div class="cart-trust">
+              <div class="cart-trust__item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--clr-ink-muted)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M8 1l1.6 3.2L13 4.8l-2.5 2.4.6 3.4L8 9l-3.1 1.6.6-3.4L3 4.8l3.4-.6L8 1z"/></svg>
+                <span>Free shipping over $80</span>
+              </div>
+              <div class="cart-trust__item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--clr-ink-muted)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M13 4L6 11 3 8"/></svg>
+                <span>30-day returns</span>
+              </div>
+              <div class="cart-trust__item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--clr-ink-muted)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><rect x="2" y="6" width="12" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 0 1 6 0v2"/></svg>
+                <span>Secure checkout</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Empty cart state -->
+        <div class="cart-empty" id="cart-empty" hidden>
+          <div class="cart-empty__inner">
+            <div class="cart-empty__icon" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--clr-border)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 5 8 16v37a5 5 0 0 0 5 5h38a5 5 0 0 0 5-5V16L48 5z"/><line x1="8" y1="16" x2="56" y2="16"/><path d="M42 27a10 10 0 0 1-20 0"/>
+              </svg>
+            </div>
+            <h2 class="cart-empty__title">Your cart is empty</h2>
+            <p class="cart-empty__body t-body">You haven't added anything yet. Start with our bestsellers — most customers begin with the Petal Toner Essence or Barrier Dew Cream.</p>
+            <a href="products.html" class="btn btn--primary">Browse products</a>
+          </div>
+        </div>
+
+        <!-- You might also like (always visible) -->
+        <div class="cart-recommendations" id="cart-recommendations">
+          <div class="section-header" style="margin-bottom:2rem;">
+            <div class="section-header__left">
+              <p class="t-label">Complete your ritual</p>
+              <h2 style="font-size:1.75rem;font-weight:300;margin-top:0.4rem;">You might also need.</h2>
+            </div>
+          </div>
+          <div class="recommendations-grid">
+            <article class="product-card" data-reveal>
+              <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sérum Lumière" loading="lazy" class="img-cover">
+                <div class="product-card__quick-add">
+                  <button class="btn" data-add-to-cart data-name="Sérum Lumière" data-price="68">Quick add — $68</button>
+                </div>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__name">Sérum Lumière</h3>
+                <p class="product-card__desc">Vitamin C brightening treatment</p>
+                <p class="product-card__price">$68</p>
+              </div>
+            </article>
+
+            <article class="product-card" data-reveal data-reveal-delay="1">
+              <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/4041393/pexels-photo-4041393.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Petal Toner Essence" loading="lazy" class="img-cover">
+                <div class="product-card__quick-add">
+                  <button class="btn" data-add-to-cart data-name="Petal Toner Essence" data-price="42">Quick add — $42</button>
+                </div>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__name">Petal Toner Essence</h3>
+                <p class="product-card__desc">Rose + Centella first essence</p>
+                <p class="product-card__price">$42</p>
+              </div>
+            </article>
+
+            <article class="product-card" data-reveal data-reveal-delay="2">
+              <div class="product-card__image">
+              <img src="https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Midnight Repair Oil" loading="lazy" class="img-cover">
+                <div class="product-card__quick-add">
+                  <button class="btn" data-add-to-cart data-name="Midnight Repair Oil" data-price="76">Quick add — $76</button>
+                </div>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__name">Midnight Repair Oil</h3>
+                <p class="product-card__desc">Bakuchiol overnight renewal</p>
+                <p class="product-card__price">$76</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__brand-name">Moonlight Étoile</p>
+          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__col-title">Shop</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">Serums</a></li>
+            <li><a href="products.html">Moisturisers</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Brand</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Help</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /* ── Cart page renderer ── */
+    const SWATCHES = {
+      'Sérum Lumière':              'linear-gradient(145deg,#f2e4d8,#e8cfc4)',
+      'Barrier Dew Cream':          'linear-gradient(145deg,#e8e0d8,#d5cabe)',
+      'Petal Toner Essence':        'linear-gradient(145deg,#f0ddd9,#e4c9c2)',
+      'Midnight Repair Oil':        'linear-gradient(145deg,#eae0d0,#d8ccba)',
+      'Calm Peptide Serum':         'linear-gradient(145deg,#dde8e4,#c8ddd7)',
+      'HA Plump Serum':             'linear-gradient(145deg,#e8e0d8,#d5cabe)',
+      'Cloud Gel Moisturiser':      'linear-gradient(145deg,#eae0d0,#d8ccba)',
+      'Green Tea Microbiome Essence':'linear-gradient(145deg,#e4eee8,#cfe0d6)',
+      'Golden Jojoba Glow Oil':     'linear-gradient(145deg,#f5edd8,#ead8b8)',
+      'Kaolin Detox Mask':          'linear-gradient(145deg,#e8e0ee,#d8cce0)',
+      'Rose Glow Sleeping Mask':    'linear-gradient(145deg,#f0ddd9,#e8cfc4)',
+      'Sensitive Skin Balm':        'linear-gradient(145deg,#f5f0ea,#ede5d8)',
+    };
+
+    function renderCart() {
+      const cart       = window.MoonlightEtoile.getCart();
+      const itemsEl    = document.getElementById('cart-items');
+      const summaryRows= document.getElementById('summary-rows');
+      const totalEl    = document.getElementById('cart-total');
+      const emptyEl    = document.getElementById('cart-empty');
+      const layoutEl   = document.getElementById('cart-layout');
+
+      if (cart.length === 0) {
+        emptyEl.hidden  = false;
+        layoutEl.style.display = 'none';
+        return;
+      }
+
+      emptyEl.hidden  = true;
+      layoutEl.style.display = '';
+
+      let subtotal = 0;
+
+      // Render items
+      itemsEl.innerHTML = cart.map(item => {
+        const price = parseFloat(item.price);
+        const lineTotal = price * item.qty;
+        subtotal += lineTotal;
+        const swatch = SWATCHES[item.name] || 'linear-gradient(145deg,#f5f0ea,#ede5d8)';
+        return `
+          <div class="cart-item" data-key="${escHtml(item.key)}">
+            <div class="cart-item__image" aria-hidden="true" style="background:${swatch};"></div>
+            <div class="cart-item__details">
+              <h3 class="cart-item__name">${escHtml(item.name)}</h3>
+              ${item.variant ? `<p class="cart-item__variant t-muted">${escHtml(item.variant)}</p>` : ''}
+              <p class="cart-item__price">$${price.toFixed(2)}</p>
+            </div>
+            <div class="cart-item__controls">
+              <div class="qty-control" role="group" aria-label="Quantity for ${escHtml(item.name)}">
+                <button class="qty-btn" data-action="decrease" data-key="${escHtml(item.key)}" aria-label="Decrease quantity">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="6" x2="10" y2="6"/></svg>
+                </button>
+                <span class="qty-value">${item.qty}</span>
+                <button class="qty-btn" data-action="increase" data-key="${escHtml(item.key)}" aria-label="Increase quantity">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
+                </button>
+              </div>
+              <p class="cart-item__line-total">$${lineTotal.toFixed(2)}</p>
+              <button class="cart-item__remove" data-key="${escHtml(item.key)}" aria-label="Remove ${escHtml(item.name)}">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Render summary
+      const shipping = subtotal >= 80 ? 0 : 8.5;
+      summaryRows.innerHTML = `
+        <div class="summary-row">
+          <span>Subtotal (${cart.reduce((s,i)=>s+i.qty,0)} items)</span>
+          <span>$${subtotal.toFixed(2)}</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>${shipping === 0 ? '<span class="summary-free">Free</span>' : '$' + shipping.toFixed(2)}</span>
+        </div>
+      `;
+      if (shipping > 0 && subtotal < 80) {
+        summaryRows.innerHTML += `
+          <p class="summary-free-nudge">Add $${(80 - subtotal).toFixed(2)} more for free shipping.</p>
+        `;
+      }
+      totalEl.textContent = '$' + (subtotal + shipping).toFixed(2);
+
+      // Bind qty / remove buttons
+      document.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key    = btn.dataset.key;
+          const action = btn.dataset.action;
+          const stored = window.MoonlightEtoile.getCart();
+          const item   = stored.find(i => i.key === key);
+          if (!item) return;
+          if (action === 'increase') item.qty++;
+          if (action === 'decrease') {
+            item.qty--;
+            if (item.qty <= 0) {
+              stored.splice(stored.indexOf(item), 1);
+            }
+          }
+          localStorage.setItem('MoonlightEtoile_cart', JSON.stringify(stored));
+          window.MoonlightEtoile.updateCartBadge?.();
+          updateCartBadgeManual();
+          renderCart();
+        });
+      });
+
+      document.querySelectorAll('.cart-item__remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          window.MoonlightEtoile.removeFromCart(btn.dataset.key);
+          renderCart();
+          window.MoonlightEtoile.showToast('Item removed from cart');
+        });
+      });
+    }
+
+    function updateCartBadgeManual() {
+      const cart  = window.MoonlightEtoile.getCart();
+      const total = cart.reduce((s,i) => s+i.qty, 0);
+      document.querySelectorAll('.cart-badge').forEach(b => {
+        b.textContent = total;
+        b.style.display = total > 0 ? 'flex' : 'none';
+      });
+    }
+
+    function escHtml(str) {
+      return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    renderCart();
+
+    // Promo code
+    const promoForm = document.getElementById('promo-form');
+    const promoFeedback = document.getElementById('promo-feedback');
+    const VALID_CODES = { 'GLOW10': 10, 'RITUAL15': 15, 'WELCOME': 20 };
+
+    promoForm?.addEventListener('submit', e => {
+      e.preventDefault();
+      const code = document.getElementById('promo-input').value.trim().toUpperCase();
+      if (VALID_CODES[code]) {
+        promoFeedback.textContent = `Code applied! ${VALID_CODES[code]}% off at checkout.`;
+        promoFeedback.style.color = 'var(--clr-rose)';
+      } else {
+        promoFeedback.textContent = 'That code isn\'t valid. Try GLOW10.';
+        promoFeedback.style.color = '#c0392b';
+      }
+    });
+
+    // Checkout
+    document.getElementById('checkout-btn')?.addEventListener('click', () => {
+      window.MoonlightEtoile.showToast('Checkout coming soon!');
+    });
+  </script>
+</body>
+</html>
