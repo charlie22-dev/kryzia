@@ -1,0 +1,473 @@
+/* ============================================================
+   Moonlight Étoile — Product Detail Page Stylesheet
+   ============================================================ */
+
+.detail-section {
+  padding-top: calc(var(--navbar-h) + 3rem);
+  padding-bottom: 8rem;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ── Interactive Gallery ───────────────────────────────────── */
+.detail-gallery {
+  display: flex;
+  gap: 1.5rem;
+  position: sticky;
+  top: calc(var(--navbar-h) + 2rem);
+}
+
+.gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90px;
+}
+
+.gallery-thumb {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  cursor: pointer;
+  background-color: rgba(22, 12, 38, 0.4);
+  transition: border-color 0.3s;
+}
+
+.gallery-thumb.active {
+  border-color: var(--color-accent-gold);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-main {
+  flex-grow: 1;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  position: relative;
+  background-color: rgba(22, 12, 38, 0.4);
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out-luxe);
+}
+
+.gallery-main:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Purchase Panel ────────────────────────────────────────── */
+.detail-panel {
+  padding: 1rem 0;
+}
+
+.detail-category {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.detail-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-rating .stars {
+  color: var(--color-accent-gold);
+}
+
+.detail-rating .count {
+  color: var(--color-text-muted);
+}
+
+.detail-price {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.detail-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* Options */
+.detail-option-group {
+  margin-bottom: 2rem;
+}
+
+.detail-option-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-option-title span {
+  color: var(--color-accent-gold);
+}
+
+.detail-shade-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.volume-tag {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  background-color: var(--color-glass-surface);
+  backdrop-filter: blur(8px);
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.volume-tag:hover {
+  border-color: var(--color-text-light);
+}
+.volume-tag.active {
+  border-color: var(--color-accent-gold);
+  background-color: rgba(216, 184, 138, 0.1);
+}
+
+/* Actions Row */
+.detail-actions-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.qty-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-glass-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.qty-btn {
+  width: 44px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: background-color 0.3s;
+}
+.qty-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.qty-input {
+  width: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  color: var(--color-text-light);
+  pointer-events: none;
+}
+
+.detail-actions-row .btn--primary {
+  flex-grow: 1;
+}
+
+.detail-wishlist-btn {
+  border: 1px solid var(--color-border);
+  width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  background-color: var(--color-glass-surface);
+  border-radius: var(--radius-full);
+  transition: all 0.3s;
+}
+
+.detail-wishlist-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+  transition: all 0.3s;
+}
+
+.detail-wishlist-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-text-light);
+}
+
+.detail-wishlist-btn.active svg {
+  fill: var(--color-rose);
+  stroke: var(--color-rose);
+}
+
+/* ── Key Benefits Icons ───────────────────────────────────── */
+.detail-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: 3rem;
+}
+
+.benefit-icon-card {
+  text-align: center;
+}
+
+.benefit-icon-card svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent-gold);
+  margin: 0 auto 0.75rem;
+}
+
+.benefit-icon-card h4 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Dynamic Accordions ────────────────────────────────────── */
+.accordion-wrapper {
+  margin-bottom: 4rem;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.accordion-trigger {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-light);
+  text-align: left;
+}
+
+.accordion-icon {
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-text-light);
+  transition: transform 0.3s;
+}
+
+.accordion-icon::before {
+  top: 5px; left: 0; width: 12px; height: 1.5px;
+}
+
+.accordion-icon::after {
+  top: 0; left: 5px; width: 1.5px; height: 12px;
+}
+
+.accordion-item.open .accordion-icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out-luxe);
+}
+
+.accordion-inner {
+  padding-bottom: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.accordion-inner ul {
+  padding-left: 1.5rem;
+}
+
+.accordion-inner li {
+  margin-bottom: 0.5rem;
+}
+
+/* ── Verified Reviews Section ──────────────────────────────── */
+.reviews-title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1.5px solid var(--color-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.reviews-title-block h3 {
+  font-size: 2.2rem;
+}
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviews-summary .big-rating {
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-family: var(--font-display);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.review-row {
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 2rem;
+}
+
+.review-row__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.review-row__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.review-row__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-glass-surface);
+  border: 1px solid var(--color-border-light);
+  object-fit: cover;
+}
+
+.review-row__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.review-row__meta {
+  font-size: 0.72rem;
+  color: var(--color-accent-gold);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-row__badge {
+  background-color: rgba(216, 184, 138, 0.12);
+  color: var(--color-accent-gold);
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-row__stars {
+  color: var(--color-accent-gold);
+  font-size: 0.85rem;
+}
+
+.review-row__title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.review-row__body {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .detail-gallery {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-gallery {
+    flex-direction: column-reverse;
+  }
+  .gallery-thumbs {
+    flex-direction: row;
+    width: 100%;
+  }
+  .gallery-thumb {
+    width: calc(25% - 0.75rem);
+  }
+  .detail-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

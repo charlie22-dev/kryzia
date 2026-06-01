@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Moonlight Étoile — reach our team for product questions, wholesale enquiries, press, or general support." />
-  <title>Contact — Moonlight Étoile</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="contact.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Moonlight Étoile's luxury customer care. Read our FAQs about shipping, shades selection, and botanical formulas.">
+  <title>Customer Care — Moonlight Étoile</title>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-
-  <!-- Navbar -->
+  <!-- ── 1. Luxury Sticky Navbar ──────────────────────────────── -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
+    <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      
+
+
       <ul class="navbar__links" role="list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="products.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
+      
       <div class="navbar__actions">
-        <a href="cart.html" class="cart-icon" aria-label="View cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        <span class="navbar__official-store" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text-muted); margin-right: 1.5rem; display: inline-block;">Official Store</span>
+        <!-- Wishlist -->
+        <a href="products.html" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
-          <span class="cart-badge">0</span>
         </a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon" aria-label="View Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
@@ -35,361 +53,224 @@
       </div>
     </div>
   </nav>
-
   <!-- Mobile Nav -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
+    <a href="products.html">Shop All</a>
+    <a href="about.html">About Brand</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="cart.html">View Cart</a>
     <div class="mobile-nav__footer">
       <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
       <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
     </div>
   </nav>
 
-  <main class="page-content">
-
-    <!-- Page Hero -->
-    <section class="page-hero">
+  <main>
+    <!-- Header -->
+    <header class="page-hero">
       <div class="container">
-        <p class="t-label page-hero__label" data-reveal>We read every message</p>
-        <h1 data-reveal data-reveal-delay="1">Let's<br><em style="font-style:italic;color:var(--clr-rose);">talk.</em></h1>
-        <p data-reveal data-reveal-delay="2">Responses within one business day from Seoul, Berlin, or São Paulo.</p>
+        <span class="t-label">Moonlight Concierge</span>
+        <h1>Support & Care</h1>
+        <p>Our dedicated team is here to assist with product selections, shades advice, and shipping support.</p>
       </div>
-    </section>
+    </header>
 
-    <!-- Contact layout -->
+    <!-- ── Contact Spread ──────────────────────────────────────── -->
     <section class="section">
       <div class="container">
         <div class="contact-layout">
-
-          <!-- Left: info -->
+          
+          <!-- Left: Details -->
           <div class="contact-info" data-reveal>
-            <div class="contact-info__channels">
-              <div class="contact-channel">
-                <p class="contact-channel__label t-label">General enquiries</p>
-                <a href="mailto:hello@moonlightetoile.com" class="contact-channel__value">hello@moonlightetoile.com</a>
+            <span class="t-label">Get In Touch</span>
+            <h2>We would love to <br>hear from <span class="italic-serif">you.</span></h2>
+            <p>For custom skin recommendations or shade-matching guidance, reach out via our direct support channels. We respond to all inquiries within 24 hours.</p>
+            
+            <div class="contact-channels">
+              <div class="channel-card">
+                <h4>General & Press Inquiries</h4>
+                <a href="mailto:care@moonlightetoile.com">care@moonlightetoile.com</a>
               </div>
-              <div class="contact-channel">
-                <p class="contact-channel__label t-label">Press &amp; editorial</p>
-                <a href="mailto:press@moonlightetoile.com" class="contact-channel__value">press@moonlightetoile.com</a>
-              </div>
-              <div class="contact-channel">
-                <p class="contact-channel__label t-label">Wholesale</p>
-                <a href="mailto:trade@moonlightetoile.com" class="contact-channel__value">trade@moonlightetoile.com</a>
-              </div>
-            </div>
-
-            <div class="contact-offices">
-              <p class="t-label" style="margin-bottom:1.5rem;">Our offices</p>
-
-              <div class="office-item">
-                <div class="office-item__dot" aria-hidden="true"></div>
-                <div>
-                  <p class="office-item__city">Seoul (HQ)</p>
-                  <p class="office-item__address t-muted">47 Mangwon-ro, Mapo-gu<br>Seoul 04175, South Korea</p>
-                </div>
-              </div>
-
-              <div class="office-item">
-                <div class="office-item__dot" aria-hidden="true"></div>
-                <div>
-                  <p class="office-item__city">Berlin</p>
-                  <p class="office-item__address t-muted">Brunnenstraße 18<br>10119 Berlin, Germany</p>
-                </div>
-              </div>
-
-              <div class="office-item">
-                <div class="office-item__dot" aria-hidden="true"></div>
-                <div>
-                  <p class="office-item__city">São Paulo</p>
-                  <p class="office-item__address t-muted">Rua Oscar Freire 2311<br>São Paulo, SP 01426-001</p>
-                </div>
+              <div class="channel-card">
+                <h4>Direct Support Telephone</h4>
+                <p>+82 (2) 555-0182 &middot; Mon-Fri, 9am - 6pm KST</p>
               </div>
             </div>
 
-            <div class="contact-social">
-              <p class="t-label" style="margin-bottom:1rem;">Follow along</p>
-              <div class="contact-social__links">
-                <a href="#" class="contact-social__link">Instagram</a>
-                <a href="#" class="contact-social__link">Pinterest</a>
-                <a href="#" class="contact-social__link">TikTok</a>
+            <div class="contact-socials">
+              <h4>Follow Our Stars</h4>
+              <div class="contact-social-links">
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">Pinterest</a>
               </div>
             </div>
           </div>
 
-          <!-- Right: form -->
-          <div class="contact-form-wrap" data-reveal data-reveal-delay="1">
-            <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-row form-row--2">
-                <div class="form-field">
-                  <label for="contact-name" class="form-label">Full name <span class="form-required" aria-hidden="true">*</span></label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="name"
-                    class="form-input"
-                    placeholder="Yuna Bae"
-                    autocomplete="name"
-                    required
-                  />
-                  <span class="form-error" id="name-error" role="alert"></span>
-                </div>
-                <div class="form-field">
-                  <label for="contact-email" class="form-label">Email address <span class="form-required" aria-hidden="true">*</span></label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email"
-                    class="form-input"
-                    placeholder="you@email.com"
-                    autocomplete="email"
-                    required
-                  />
-                  <span class="form-error" id="email-error" role="alert"></span>
-                </div>
+          <!-- Right: Contact Form Card -->
+          <div class="contact-form-card" data-reveal data-reveal-delay="1">
+            <h3>Send Message</h3>
+            <p>Please enter your details below and we will get back to you promptly.</p>
+            
+            <form onsubmit="event.preventDefault(); window.MoonlightEtoile.showToast('Message sent successfully!'); this.reset();">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" class="form-input" required placeholder="E.g., Charlotte Vance" autocomplete="name">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" required placeholder="E.g., charlotte@example.com" autocomplete="email">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-message">How can we help?</label>
+                <textarea id="contact-message" class="form-input" rows="4" required placeholder="Tell us about your skincare queries or shade preference..." style="resize: none; font-family: inherit;"></textarea>
               </div>
 
-              <div class="form-field">
-                <label for="contact-topic" class="form-label">Topic</label>
-                <select id="contact-topic" name="topic" class="form-input form-select">
-                  <option value="">Select a topic</option>
-                  <option value="order">Order &amp; Shipping</option>
-                  <option value="product">Product question</option>
-                  <option value="ingredient">Ingredient enquiry</option>
-                  <option value="wholesale">Wholesale</option>
-                  <option value="press">Press &amp; Editorial</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="contact-message" class="form-label">Message <span class="form-required" aria-hidden="true">*</span></label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  class="form-input form-textarea"
-                  placeholder="Tell us what's on your mind. We read every word."
-                  rows="6"
-                  required
-                ></textarea>
-                <span class="form-error" id="message-error" role="alert"></span>
-              </div>
-
-              <div class="form-footer">
-                <p class="form-note t-muted">We respond within one business day. No automated replies.</p>
-                <button type="submit" class="btn btn--primary form-submit" id="contact-submit">
-                  <span class="form-submit__text">Send message</span>
-                  <svg class="form-submit__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </button>
-              </div>
-
-              <div class="form-success" id="form-success" hidden>
-                <div class="form-success__icon" aria-hidden="true">
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--clr-rose)" stroke-width="1.5" stroke-linecap="round"><circle cx="14" cy="14" r="12"/><path d="M9 14l3.5 3.5L19 10"/></svg>
-                </div>
-                <div>
-                  <p class="form-success__title">Message sent.</p>
-                  <p class="form-success__body t-muted">We'll reply to your email within one business day.</p>
-                </div>
-              </div>
+              <button type="submit" class="btn btn--primary" style="width: 100%; margin-top: 1rem;">
+                <span>Send Message</span>
+              </button>
             </form>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- FAQ accordion -->
-    <section class="section--sm faq-section" aria-labelledby="faq-heading">
-      <div class="container">
-        <div class="faq-layout">
-          <div data-reveal>
-            <p class="t-label">Common questions</p>
-            <h2 id="faq-heading" class="t-heading" style="font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:300;margin-top:0.75rem;">
-              Quick<br>answers.
-            </h2>
+        </div>
+
+        <!-- ── FAQ Accordion Section ──────────────────────────────── -->
+        <div class="faq-section" id="faq">
+          <div class="faq-title-block" data-reveal>
+            <span class="t-label">Answers</span>
+            <h2>Frequently Asked Questions</h2>
           </div>
 
-          <div class="faq-list" data-reveal data-reveal-delay="1">
-            <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
-                <span>How long does shipping take?</span>
-                <div class="faq-icon" aria-hidden="true"></div>
+          <div class="faq-wrapper" data-reveal data-reveal-delay="1">
+            
+            <!-- Question 1 -->
+            <article class="faq-item">
+              <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>What is the standard processing and shipping time?</span>
+                <span class="faq-icon"></span>
               </button>
-              <div class="faq-body" id="faq-1" hidden>
-                <p class="t-body">Standard shipping (3-7 business days) is available worldwide. Express (1-2 days) ships from our Seoul warehouse for most Asian destinations, and from our Berlin depot for Europe. Same-day delivery is available in Seoul through our courier partner.</p>
+              <div class="faq-content">
+                <div class="faq-inner">
+                  <p>All orders are processed and prepared within 1-2 business days. Domestic orders inside South Korea arrive within 2-3 business days. International express shipping generally arrives in 5-7 business days depending on customs processing in your country.</p>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
-                <span>What is your return policy?</span>
-                <div class="faq-icon" aria-hidden="true"></div>
+            <!-- Question 2 -->
+            <article class="faq-item">
+              <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>How can I choose the correct foundation or lip shade?</span>
+                <span class="faq-icon"></span>
               </button>
-              <div class="faq-body" id="faq-2" hidden>
-                <p class="t-body">We offer a 30-day satisfaction guarantee. If your skin doesn't respond well to a product, contact us and we'll arrange a return or exchange — no awkward questions. Opened products are accepted if you've used less than a third of the product.</p>
+              <div class="faq-content">
+                <div class="faq-inner">
+                  <p>Our shades are formulated with light-reflective pigment matching systems. You can read the shade descriptions on the product detail page, or send a high-resolution selfie in natural ambient light to care@moonlightetoile.com, and our resident beauty consultants will personally match you.</p>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
-                <span>Are your products suitable for sensitive skin?</span>
-                <div class="faq-icon" aria-hidden="true"></div>
+            <!-- Question 3 -->
+            <article class="faq-item">
+              <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>Are Moonlight Étoile products safe for sensitive or acne-prone skin?</span>
+                <span class="faq-icon"></span>
               </button>
-              <div class="faq-body" id="faq-3" hidden>
-                <p class="t-body">Most of our formulas are designed with sensitive skin in mind. Products marked "fragrance optional" are available in unscented versions. We recommend patch-testing any new product on the inner arm for 48 hours before full application. Our team of dermatologists is available for specific concerns via email.</p>
+              <div class="faq-content">
+                <div class="faq-inner">
+                  <p>Yes. All of our skincare and cosmetic lines are rigorously dermatologist tested, hypoallergenic, non-comedogenic, and completely free of artificial synthetic perfumes and harsh parabens. We list all active ingredients transparently on every single package.</p>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
-                <span>Do you ship internationally?</span>
-                <div class="faq-icon" aria-hidden="true"></div>
+            <!-- Question 4 -->
+            <article class="faq-item">
+              <button class="faq-trigger" onclick="toggleFaq(this)">
+                <span>What is your returns policy?</span>
+                <span class="faq-icon"></span>
               </button>
-              <div class="faq-body" id="faq-4" hidden>
-                <p class="t-body">Yes — we ship to 47 countries currently. Import duties and taxes may apply depending on your destination country and are the responsibility of the recipient. Our checkout will calculate estimated duties for most locations before you complete your order.</p>
+              <div class="faq-content">
+                <div class="faq-inner">
+                  <p>We want you to love your Moonlight Étoile ritual. If you are not completely satisfied with a formula or need a shade swap, we gladly accept returns or exchanges of slightly used products within 30 days of package receipt. Simply email care@moonlightetoile.com to receive a return label.</p>
+                </div>
               </div>
-            </div>
+            </article>
 
-            <div class="faq-item">
-              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
-                <span>Can I layer multiple Moonlight Étoile products?</span>
-                <div class="faq-icon" aria-hidden="true"></div>
-              </button>
-              <div class="faq-body" id="faq-5" hidden>
-                <p class="t-body">Our formulas are designed to work together. The recommended order is: Essence, Serum, Moisturiser, Oil. If you're using an active serum (like Sérum Lumière), apply it after the essence and before your barrier cream. Avoid combining the Midnight Repair Oil with any other active serum on the same evening until your skin has adjusted.</p>
-              </div>
-            </div>
           </div>
         </div>
+
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand">
-          <p class="footer__brand-name">Moonlight Étoile</p>
-          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
-          <div class="footer__socials">
-            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
-            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
-            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
-          </div>
+        <div class="footer__brand-col">
+          <h3>Moonlight Étoile</h3>
+          <p>Luxurious skincare and cosmetics inspired by the stars, formulated to let your natural beauty glow beyond.</p>
         </div>
-        <div>
-          <p class="footer__col-title">Shop</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="products.html">All Products</a></li>
-            <li><a href="products.html">Serums</a></li>
-            <li><a href="products.html">Moisturisers</a></li>
-            <li><a href="products.html">Essences</a></li>
-            <li><a href="products.html">Facial Oils</a></li>
+        
+        <div class="footer__col">
+          <h4>Collection</h4>
+          <ul role="list">
+            <li><a href="products.html?category=skincare">Skincare Base</a></li>
+            <li><a href="products.html?category=cosmetics">Cosmetics Core</a></li>
+            <li><a href="products.html?subcategory=lips">Lips & Tint</a></li>
+            <li><a href="products.html?tag=Bestseller">Bestselling Radiance</a></li>
           </ul>
         </div>
-        <div>
-          <p class="footer__col-title">Brand</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="about.html#ingredients">Ingredients</a></li>
-            <li><a href="about.html#sustainability">Sustainability</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+        <div class="footer__col">
+          <h4>Customer Care</h4>
+          <ul role="list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#faq">FAQ Help</a></li>
+            <li><a href="about.html#sustainability">Sustainability Sourcing</a></li>
+            <li><a href="about.html">Brand Origins</a></li>
           </ul>
         </div>
-        <div>
-          <p class="footer__col-title">Help</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="#">Shipping &amp; Returns</a></li>
-            <li><a href="#">Skin Quiz</a></li>
-            <li><a href="#">Ingredient Glossary</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+
+        <div class="footer__newsletter">
+          <h4>Be In The Circle</h4>
+          <p>Join for early launches and botanical wellness rituals.</p>
+          <form class="footer__newsletter-form" onsubmit="event.preventDefault(); window.MoonlightEtoile.showToast('Subscription saved!')">
+            <input type="email" class="footer__newsletter-input" placeholder="Your email address" required aria-label="Email Address">
+            <button type="submit" class="footer__newsletter-btn">&rarr;</button>
+          </form>
         </div>
       </div>
+
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
-        <nav class="footer__legal" aria-label="Legal links">
+        <p>&copy; 2026 Moonlight Étoile Beauty. Sourced ethically. Cruelty-free certified.</p>
+        <div class="footer__bottom-links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Cookie Preferences</a>
-        </nav>
+          <a href="#">Terms & Conditions</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  
   <script>
-    /* ── Contact form validation ── */
-    const form    = document.getElementById('contact-form');
-    const success = document.getElementById('form-success');
-    const submit  = document.getElementById('contact-submit');
-
-    function setError(fieldId, errorId, msg) {
-      const field = document.getElementById(fieldId);
-      const err   = document.getElementById(errorId);
-      if (msg) {
-        field.setAttribute('aria-invalid', 'true');
-        field.setAttribute('aria-describedby', errorId);
-        err.textContent = msg;
-        field.classList.add('form-input--error');
+    // Toggle FAQ Accordions
+    function toggleFaq(trigger) {
+      const item = trigger.closest('.faq-item');
+      const content = item.querySelector('.faq-content');
+      const isOpen = item.classList.toggle('open');
+      
+      if (isOpen) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
       } else {
-        field.removeAttribute('aria-invalid');
-        err.textContent = '';
-        field.classList.remove('form-input--error');
+        content.style.maxHeight = '0';
       }
-      return !msg;
     }
-
-    function validateForm() {
-      const name    = document.getElementById('contact-name').value.trim();
-      const email   = document.getElementById('contact-email').value.trim();
-      const message = document.getElementById('contact-message').value.trim();
-      const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      let valid = true;
-      valid = setError('contact-name',    'name-error',    name    ? '' : 'Please enter your name.')       && valid;
-      valid = setError('contact-email',   'email-error',   emailRx.test(email) ? '' : 'Please enter a valid email.') && valid;
-      valid = setError('contact-message', 'message-error', message.length >= 10 ? '' : 'Message must be at least 10 characters.') && valid;
-      return valid;
-    }
-
-    form?.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!validateForm()) return;
-      submit.disabled = true;
-      submit.querySelector('.form-submit__text').textContent = 'Sending…';
-      setTimeout(() => {
-        form.style.display = 'none';
-        success.hidden = false;
-      }, 1000);
-    });
-
-    /* ── FAQ accordion ── */
-    document.querySelectorAll('.faq-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const expanded = trigger.getAttribute('aria-expanded') === 'true';
-        const bodyId   = trigger.getAttribute('aria-controls');
-        const body     = document.getElementById(bodyId);
-        // Close all
-        document.querySelectorAll('.faq-trigger').forEach(t => {
-          t.setAttribute('aria-expanded', 'false');
-          t.closest('.faq-item').classList.remove('faq-item--open');
-        });
-        document.querySelectorAll('.faq-body').forEach(b => { b.hidden = true; });
-        // Open clicked if was closed
-        if (!expanded) {
-          trigger.setAttribute('aria-expanded', 'true');
-          trigger.closest('.faq-item').classList.add('faq-item--open');
-          body.hidden = false;
-        }
-      });
-    });
   </script>
+
 </body>
 </html>

@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shop Moonlight Étoile's full range of botanical serums, moisturisers, essences, and facial oils. Formulated with certified ingredients." />
-  <title>Products — Moonlight Étoile</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="products.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop Moonlight Étoile's full collection. Luxury skincare and cosmetics crafted to illuminate your natural beauty. Explore our complete catalog.">
+  <title>The Collection — Moonlight Étoile</title>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="products.css">
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
+    <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+
+      
+
       <ul class="navbar__links" role="list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="products.html" class="active">Shop</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+
       <div class="navbar__actions">
-        <a href="cart.html" class="cart-icon" aria-label="View cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text-muted); margin-right: 1.5rem; display: inline-block;">Official Store</span>
+        <a href="products.html" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
-          <span class="cart-badge">0</span>
         </a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <a href="cart.html" class="cart-icon" aria-label="View Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
@@ -36,341 +52,452 @@
     </div>
   </nav>
 
-  <!-- Mobile Nav -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
+    <a href="products.html">Shop All</a>
+    <a href="about.html">About Brand</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="cart.html">View Cart</a>
     <div class="mobile-nav__footer">
       <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
       <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
     </div>
   </nav>
 
-  <main class="page-content">
-
-    <!-- Page Hero -->
-    <section class="page-hero">
+  <main>
+    <!-- ── Collection Header ──────────────────────────────── -->
+    <header class="collection-header">
       <div class="container">
-        <p class="t-label page-hero__label" data-reveal>The full collection</p>
-        <h1 data-reveal data-reveal-delay="1">Every<br><em style="font-style:italic;color:var(--clr-rose);">formula.</em></h1>
-        <p data-reveal data-reveal-delay="2">Thirty-one ingredients maximum, per product. Always disclosed. Always purposeful.</p>
+        <p class="collection-header__eyebrow" data-reveal>Moonlight Formulations</p>
+        <h1 class="collection-header__title" data-reveal data-reveal-delay="1">The Collection</h1>
+        <p class="collection-header__sub" data-reveal data-reveal-delay="2">Precision-crafted skincare and cosmetics for skin that glows beyond the stars.</p>
       </div>
-    </section>
+    </header>
 
-    <!-- Filter Tabs -->
-    <div class="filter-bar">
+    <!-- ── Category Navigation Bar ────────────────────────── -->
+    <nav class="category-nav" aria-label="Product categories">
       <div class="container">
-        <div class="filter-bar__inner">
-          <div class="filter-tabs" role="tablist" aria-label="Filter products by category">
-            <button class="filter-tab active" role="tab" aria-selected="true" data-filter="all">All</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-filter="serum" id="serums">Serums</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-filter="moisturiser" id="moisturisers">Moisturisers</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-filter="essence" id="essences">Essences</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-filter="oil" id="oils">Facial Oils</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-filter="mask">Masks</button>
-          </div>
-          <div class="filter-bar__count">
-            <span id="product-count">12</span> products
+        <ul class="category-nav__list" role="list" id="category-tabs">
+          <li><button class="category-tab active" data-filter="all">All</button></li>
+          <li><button class="category-tab" data-filter="skincare">Skincare</button></li>
+          <li><button class="category-tab" data-filter="face">Face</button></li>
+          <li><button class="category-tab" data-filter="lips">Lips</button></li>
+          <li><button class="category-tab" data-filter="eyes">Eyes</button></li>
+          <li><button class="category-tab" data-filter="tools">Tools</button></li>
+          <li><button class="category-tab" data-filter="bestsellers">Bestsellers</button></li>
+          <li><button class="category-tab" data-filter="new">New</button></li>
+        </ul>
+
+        
+      </div>
+    </nav>
+
+    <!-- ── Editorial Product Grid ──────────────────────────── -->
+    <section class="collection-section" aria-label="Product Collection">
+      <div class="container">
+        <div class="collection-layout">
+          <!-- Sidebar search and meta directory -->
+          <aside class="collection-sidebar" data-reveal>
+            <div class="sidebar-search-block">
+              <h3 class="sidebar-title">Search</h3>
+              <div class="catalog-search-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="search" id="catalog-search" class="catalog-search-input" placeholder="Search..." oninput="filterCatalog()" aria-label="Search the collection">
+              </div>
+            </div>
+            
+            <div class="sidebar-info-block">
+              <h3 class="sidebar-title">Active Filters</h3>
+              <p class="sidebar-info-text" style="color: var(--color-text-muted); font-size: 0.75rem; margin-bottom: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase;">Total Products</p>
+              <span class="category-count" id="active-count">37 products</span>
+            </div>
+          </aside>
+
+          <!-- Product Grid -->
+          <div class="collection-grid" id="catalog-grid-renderer" role="list">
+            <!-- Dynamically rendered via JS -->
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Products Grid -->
-    <section class="section" aria-label="Products">
-      <div class="container">
-        <div class="catalog-grid" id="catalog-grid">
-
-          <!-- Serums -->
-          <article class="product-card catalog-card" data-category="serum" data-reveal>
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sérum Lumière" loading="eager" class="img-cover">
-              <span class="product-card__badge product-card__badge--new">New</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Sérum Lumière" data-price="68">Quick add — $68</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Serum</p>
-              <h2 class="product-card__name">Sérum Lumière</h2>
-              <p class="product-card__desc">Vitamin C 15% + Ferulic brightening treatment</p>
-              <p class="product-card__price">$68</p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="serum" data-reveal data-reveal-delay="1">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/5069291/pexels-photo-5069291.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Calm Peptide Serum" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Calm Peptide Serum" data-price="82">Quick add — $82</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Serum</p>
-              <h2 class="product-card__name">Calm Peptide Serum</h2>
-              <p class="product-card__desc">Hexapeptide-10 + Niacinamide barrier repair</p>
-              <p class="product-card__price">$82</p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="serum" data-reveal data-reveal-delay="2">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="HA Plump Serum" loading="lazy" class="img-cover">
-              <span class="product-card__badge">Bestseller</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="HA Plump Serum" data-price="58">Quick add — $58</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Serum</p>
-              <h2 class="product-card__name">HA Plump Serum</h2>
-              <p class="product-card__desc">Multi-weight Hyaluronic Acid deep hydration</p>
-              <p class="product-card__price">$58</p>
-            </div>
-          </article>
-
-          <!-- Moisturisers -->
-          <article class="product-card catalog-card" data-category="moisturiser" data-reveal>
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Barrier Dew Cream" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Barrier Dew Cream" data-price="54">Quick add — $54</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Moisturiser</p>
-              <h2 class="product-card__name">Barrier Dew Cream</h2>
-              <p class="product-card__desc">Ceramide NP + Squalane deep moisture</p>
-              <p class="product-card__price">$54</p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="moisturiser" data-reveal data-reveal-delay="1">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Cloud Gel Moisturiser" loading="lazy" class="img-cover">
-              <span class="product-card__badge product-card__badge--new">New</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Cloud Gel Moisturiser" data-price="48">Quick add — $48</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Moisturiser</p>
-              <h2 class="product-card__name">Cloud Gel Moisturiser</h2>
-              <p class="product-card__desc">Oil-free, weightless gel for combination skin</p>
-              <p class="product-card__price">$48</p>
-            </div>
-          </article>
-
-          <!-- Essences -->
-          <article class="product-card catalog-card" data-category="essence" data-reveal>
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4041393/pexels-photo-4041393.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Petal Toner Essence" loading="lazy" class="img-cover">
-              <span class="product-card__badge">Bestseller</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Petal Toner Essence" data-price="42">Quick add — $42</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Essence</p>
-              <h2 class="product-card__name">Petal Toner Essence</h2>
-              <p class="product-card__desc">Rose + Centella asiatica first essence</p>
-              <p class="product-card__price">$42 <s>$58</s></p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="essence" data-reveal data-reveal-delay="1">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4465158/pexels-photo-4465158.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Green Tea Microbiome Essence" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Green Tea Microbiome Essence" data-price="46">Quick add — $46</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Essence</p>
-              <h2 class="product-card__name">Green Tea Microbiome Essence</h2>
-              <p class="product-card__desc">Probiotic-fermented green tea extract</p>
-              <p class="product-card__price">$46</p>
-            </div>
-          </article>
-
-          <!-- Oils -->
-          <article class="product-card catalog-card" data-category="oil" data-reveal>
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Midnight Repair Oil" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Midnight Repair Oil" data-price="76">Quick add — $76</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Facial Oil</p>
-              <h2 class="product-card__name">Midnight Repair Oil</h2>
-              <p class="product-card__desc">Bakuchiol + Sea buckthorn overnight renewal</p>
-              <p class="product-card__price">$76</p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="oil" data-reveal data-reveal-delay="1">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Golden Jojoba Glow Oil" loading="lazy" class="img-cover">
-              <span class="product-card__badge product-card__badge--new">New</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Golden Jojoba Glow Oil" data-price="64">Quick add — $64</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Facial Oil</p>
-              <h2 class="product-card__name">Golden Jojoba Glow Oil</h2>
-              <p class="product-card__desc">Jojoba + rosehip for morning luminosity</p>
-              <p class="product-card__price">$64</p>
-            </div>
-          </article>
-
-          <!-- Masks -->
-          <article class="product-card catalog-card" data-category="mask" data-reveal>
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Kaolin Detox Mask" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Kaolin Detox Mask" data-price="38">Quick add — $38</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Mask</p>
-              <h2 class="product-card__name">Kaolin Detox Mask</h2>
-              <p class="product-card__desc">White kaolin + activated willow bark</p>
-              <p class="product-card__price">$38</p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="mask" data-reveal data-reveal-delay="1">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/5175516/pexels-photo-5175516.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Rose Glow Sleeping Mask" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Rose Glow Sleeping Mask" data-price="44">Quick add — $44</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Mask</p>
-              <h2 class="product-card__name">Rose Glow Sleeping Mask</h2>
-              <p class="product-card__desc">Leave-on overnight rose + Sodium PCA</p>
-              <p class="product-card__price">$44</p>
-            </div>
-          </article>
-
-          <article class="product-card catalog-card" data-category="moisturiser" data-reveal data-reveal-delay="2">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/6621374/pexels-photo-6621374.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sensitive Skin Balm" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Sensitive Skin Balm" data-price="52">Quick add — $52</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="t-label" style="font-size:0.65rem;margin-bottom:0.25rem">Moisturiser</p>
-              <h2 class="product-card__name">Sensitive Skin Balm</h2>
-              <p class="product-card__desc">Colloidal oat + allantoin calming balm</p>
-              <p class="product-card__price">$52</p>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Empty state (shown when no filter matches) -->
-        <div class="empty-state" id="empty-state" hidden>
-          <div class="empty-state__icon" aria-hidden="true">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--clr-border)" stroke-width="1.2"><circle cx="24" cy="24" r="20"/><path d="M16 24h16M24 16v16"/></svg>
+        <!-- Empty State -->
+        <div class="collection-empty" id="collection-empty" style="display: none;" aria-live="polite">
+          <div class="collection-empty__inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+            <h3>No products found</h3>
+            <p>Try a different category or refine your search.</p>
+            <button class="btn btn--outline" onclick="resetCollection()">Clear Search</button>
           </div>
-          <p class="empty-state__text">No products in this category yet.</p>
-          <button class="btn btn--outline" onclick="document.querySelector('[data-filter=all]').click()">Show all products</button>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+  <!-- ── Luxury Editorial Footer ─────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <!-- Oversized watermark -->
+    <div class="footer-watermark" aria-hidden="true">Moonlight Étoile</div>
+
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <p class="footer__brand-name">Moonlight Étoile</p>
-          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
-          <div class="footer__socials">
-            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
-            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
-            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
+      <div class="footer-top">
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <p class="footer-brand__name">Moonlight Étoile</p>
+          <p class="footer-brand__desc">Precision skincare and modern cosmetics. Seoul-founded. Star-inspired.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.74 1.22-5.18 1.22-5.18s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.57 2.25-.87 3.5-.25 1.04.52 1.89 1.54 1.89 1.85 0 3.28-1.95 3.28-4.77 0-2.49-1.79-4.24-4.34-4.24-2.96 0-4.69 2.22-4.69 4.51 0 .89.34 1.85.77 2.37.08.1.1.19.07.29-.08.32-.25 1.04-.28 1.19-.04.19-.14.23-.32.14-1.25-.58-2.03-2.42-2.03-3.89 0-3.15 2.29-6.05 6.6-6.05 3.47 0 6.16 2.47 6.16 5.77 0 3.44-2.17 6.21-5.18 6.21-1.01 0-1.96-.53-2.29-1.14l-.62 2.33c-.22.86-.83 1.94-1.24 2.59.93.29 1.93.44 2.95.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </a>
           </div>
         </div>
-        <div>
-          <p class="footer__col-title">Shop</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="products.html">All Products</a></li>
-            <li><a href="products.html#serums">Serums</a></li>
-            <li><a href="products.html#moisturisers">Moisturisers</a></li>
-            <li><a href="products.html#essences">Essences</a></li>
-            <li><a href="products.html#oils">Facial Oils</a></li>
+
+        <!-- Collections -->
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul role="list">
+            <li><a href="products.html?filter=skincare">Skincare Ritual</a></li>
+            <li><a href="products.html?filter=face">Face Cosmetics</a></li>
+            <li><a href="products.html?filter=lips">Lips Collection</a></li>
+            <li><a href="products.html?filter=eyes">Eye Formulas</a></li>
+            <li><a href="products.html?filter=bestsellers">Bestsellers</a></li>
+            <li><a href="products.html?filter=new">New Arrivals</a></li>
           </ul>
         </div>
-        <div>
-          <p class="footer__col-title">Brand</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="about.html#ingredients">Ingredients</a></li>
-            <li><a href="about.html#sustainability">Sustainability</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+        <!-- Support -->
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul role="list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="#">Shade Matching Guide</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
           </ul>
         </div>
-        <div>
-          <p class="footer__col-title">Help</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="#">Shipping &amp; Returns</a></li>
-            <li><a href="#">Skin Quiz</a></li>
-            <li><a href="#">Ingredient Glossary</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+          <h4>Join the Constellation</h4>
+          <p>Get early access to new launches and exclusive offers.</p>
+          <form class="footer-newsletter__form" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" placeholder="Your email address" class="footer-newsletter__input" aria-label="Email for newsletter" required>
+            <button type="submit" class="footer-newsletter__btn" aria-label="Subscribe">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
-        <nav class="footer__legal" aria-label="Legal links">
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Moonlight Étoile. All rights reserved.</p>
+        <div class="footer-bottom__links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Cookie Preferences</a>
-        </nav>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
   <script>
-    // Filter tabs
-    const tabs    = document.querySelectorAll('.filter-tab');
-    const cards   = document.querySelectorAll('.catalog-card');
-    const counter = document.getElementById('product-count');
-    const empty   = document.getElementById('empty-state');
+    /* ── Collection Page Controller ──────────────────────── */
+    let activeFilter = 'all';
+    let searchQuery = '';
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
-        const filter = tab.dataset.filter;
-        let visible = 0;
-
-        cards.forEach(card => {
-          const match = filter === 'all' || card.dataset.category === filter;
-          card.style.display = match ? '' : 'none';
-          if (match) visible++;
+    // Read URL params on load
+    (function initFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('filter')) {
+        activeFilter = params.get('filter');
+        document.querySelectorAll('.category-tab').forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.filter === activeFilter);
         });
+      }
+    })();
 
-        counter.textContent = visible;
-        empty.hidden = visible > 0;
+    // Shade color map
+    const shadeColors = {
+      'Fair Light': '#F5E6D3', 'Neutral Beige': '#E8C9A0', 'Warm Sand': '#D4A574',
+      'Golden Honey': '#C4883E', 'Rich Tan': '#A06030', 'Deep Mocha': '#6B3A1F',
+      'Fair Ivory': '#FBF0E0', 'Soft Beige': '#E8D5B7', 'Warm Ochre': '#C9923C',
+      'Rich Almond': '#9B6240', 'Deep Cocoa': '#5C2E0E', 'Light Glow': '#F2E4D0',
+      'Medium Dew': '#D4A878', 'Deep Bronze': '#8B5E3C', 'Light Ivory': '#FBF2E8',
+      'Natural Beige': '#E3C89A', 'Honey Gold': '#C8943E', 'Fair': '#F5E8D8',
+      'Light': '#E8CFA8', 'Medium': '#C9A070', 'Tan': '#A07040', 'Deep': '#6B3820',
+      'Light Sculpt': '#C8A882', 'Medium Sculpt': '#A07850', 'Deep Sculpt': '#6B4828',
+      'Rosewood': '#C97080', 'Bare Peach': '#E8A890', 'Berry Dew': '#9B5870', 'Soft Mauve': '#C89098',
+      'Starry Black': '#1A1A2E', 'Deep Espresso': '#3D2314', 'Champagne Glow': '#D8C080',
+      'Soft Taupe': '#B8A090', 'Ash Brown': '#7A5848', 'Dark Charcoal': '#2E2018',
+      'Peach': '#E8A880', 'Bare Bloom': '#E8C4B0', 'Sunrise': '#E89060', 'Fresh Cherry': '#C83050',
+      'Berry Begin': '#8B2848', 'Mauve Step': '#906878', 'Foundation Nude': '#D8B090',
+      'Daily Rose': '#C87878', 'Soft Coral': '#E88060', 'Signature Red': '#C81828',
+      'Deep Mauve': '#7A3850', 'First Wine': '#5A2030', 'Clear Start': 'rgba(255,255,255,0.4)',
+      'Soft Pink Glow': '#F0A8B8', 'Peach Finish': '#F0A890', 'Rose Shine': '#D87888',
+      'Bare Glow': '#E8C8B0', 'Fresh Dew': '#C0E8E0', 'Light Sculpt ': '#C8A882',
+      'Warm Sand ': '#D4A574', 'Warm Honey': '#C89040', 'Light Ivory ': '#FBF2E8'
+    };
+
+    function getShadeColor(shadeName) {
+      return shadeColors[shadeName] || '#D8B88A';
+    }
+
+    function filterCatalog() {
+      searchQuery = document.getElementById('catalog-search').value.toLowerCase().trim();
+      renderCollection();
+    }
+
+    function setFilter(filter) {
+      activeFilter = filter;
+      document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.filter === filter);
       });
+      renderCollection();
+    }
+
+    function resetCollection() {
+      activeFilter = 'all';
+      searchQuery = '';
+      document.getElementById('catalog-search').value = '';
+      document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.filter === 'all');
+      });
+      renderCollection();
+    }
+
+    function getFilteredProducts() {
+      const products = window.MoonlightEtoile.products;
+      return products.filter(p => {
+        const matchesFilter = (() => {
+          if (activeFilter === 'all') return true;
+          if (activeFilter === 'skincare') return p.category === 'skincare';
+          if (activeFilter === 'face') {
+            const faceSubcats = ['primer', 'foundation', 'skin tint', 'cushion', 'concealer', 'contour', 'bronzer', 'blush', 'powder', 'setting spray'];
+            return p.category === 'cosmetics' && faceSubcats.includes(p.subcategory);
+          }
+          if (activeFilter === 'lips') {
+            return ['lip tint', 'lipstick', 'lip gloss'].includes(p.subcategory);
+          }
+          if (activeFilter === 'eyes') {
+            return ['mascara', 'eyeshadow', 'eyeliner', 'brow'].includes(p.subcategory);
+          }
+          if (activeFilter === 'tools') {
+            return p.subcategory === 'beauty tools';
+          }
+          if (activeFilter === 'bestsellers') {
+            return p.tag === 'Bestseller';
+          }
+          if (activeFilter === 'new') {
+            return p.tag === 'New';
+          }
+          return true;
+        })();
+
+        const matchesSearch = !searchQuery ||
+          p.name.toLowerCase().includes(searchQuery) ||
+          p.desc.toLowerCase().includes(searchQuery) ||
+          p.subcategory.toLowerCase().includes(searchQuery);
+
+        return matchesFilter && matchesSearch;
+      });
+    }
+
+    function renderCollection() {
+      const grid = document.getElementById('catalog-grid-renderer');
+      const empty = document.getElementById('collection-empty');
+      const countEl = document.getElementById('active-count');
+      const filtered = getFilteredProducts();
+
+      countEl.textContent = `${filtered.length} product${filtered.length !== 1 ? 's' : ''}`;
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        empty.style.display = 'flex';
+        return;
+      }
+
+      grid.style.display = 'grid';
+      empty.style.display = 'none';
+
+      const wishlist = window.MoonlightEtoile.getWishlist();
+
+      grid.innerHTML = filtered.map((p, i) => {
+        const isWishlisted = wishlist.includes(p.id);
+        const tagBadge = p.tag ? `<span class="pcard__tag pcard__tag--${p.tag.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}">${p.tag}</span>` : '';
+
+        const shadesHtml = p.shades ? `
+          <div class="pcard__shades" aria-label="Available shades">
+            ${p.shades.slice(0, 6).map((s, si) => `
+              <button class="pcard__swatch ${si === 0 ? 'active' : ''}"
+                style="background-color: ${getShadeColor(s)}"
+                data-shade="${s}"
+                data-product-id="${p.id}"
+                title="${s}"
+                aria-label="${s}">
+              </button>
+            `).join('')}
+            ${p.shades.length > 6 ? `<span class="pcard__shades-more">+${p.shades.length - 6}</span>` : ''}
+          </div>
+        ` : '';
+
+        return `
+          <article class="pcard" role="listitem" style="--stagger: ${i}" data-reveal>
+            <div class="pcard__image-wrap">
+              ${tagBadge}
+
+              <!-- Wishlist -->
+              <button class="pcard__wishlist ${isWishlisted ? 'active' : ''}"
+                data-wishlist
+                data-id="${p.id}"
+                aria-label="${isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}"
+                onclick="event.stopPropagation(); window.MoonlightEtoile.toggleWishlist('${p.id}')">
+                <svg viewBox="0 0 24 24" fill="${isWishlisted ? 'var(--color-rose)' : 'none'}" stroke="${isWishlisted ? 'var(--color-rose)' : 'currentColor'}" stroke-width="1.5">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+
+              <!-- Images -->
+              <a href="detail.html?id=${p.id}" class="pcard__image-link" aria-label="View ${p.name}">
+                <img class="pcard__img pcard__img--primary"
+                  src="${p.image}"
+                  alt="${p.name}"
+                  loading="${i < 8 ? 'eager' : 'lazy'}"
+                  width="480" height="600">
+                <img class="pcard__img pcard__img--hover"
+                  src="${p.hoverImage}"
+                  alt="${p.name} in use"
+                  loading="lazy"
+                  width="480" height="600"
+                  aria-hidden="true">
+              </a>
+
+              <!-- Quick Add -->
+              <button class="pcard__quick-add"
+                aria-label="Quick add ${p.name} to cart"
+                onclick="handleQuickAdd(event, '${p.id}')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Card Info -->
+            <div class="pcard__info">
+              <div class="pcard__info-row">
+                <a href="detail.html?id=${p.id}" class="pcard__name">${p.name.toUpperCase()}</a>
+                <span class="pcard__price">&#8369;${p.price.toLocaleString()}</span>
+              </div>
+              <p class="pcard__desc">${p.desc.split('.')[0]}.</p>
+              ${shadesHtml}
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      // Attach swatch hover events
+      grid.querySelectorAll('.pcard__swatch').forEach(swatch => {
+        swatch.addEventListener('mouseenter', handleSwatchHover);
+        swatch.addEventListener('mouseleave', handleSwatchLeave);
+        swatch.addEventListener('click', e => {
+          e.stopPropagation();
+          const card = swatch.closest('.pcard');
+          card.querySelectorAll('.pcard__swatch').forEach(s => s.classList.remove('active'));
+          swatch.classList.add('active');
+        });
+      });
+
+      // Re-init reveal observer
+      initReveal();
+    }
+
+    function handleSwatchHover(e) {
+      const swatch = e.currentTarget;
+      const card = swatch.closest('.pcard');
+      const shadeName = swatch.dataset.shade;
+      if (!card) return;
+      // Show shade name tooltip
+      let tooltip = card.querySelector('.pcard__shade-tooltip');
+      if (!tooltip) {
+        tooltip = document.createElement('span');
+        tooltip.className = 'pcard__shade-tooltip';
+        card.querySelector('.pcard__info').appendChild(tooltip);
+      }
+      tooltip.textContent = shadeName;
+      tooltip.classList.add('visible');
+    }
+
+    function handleSwatchLeave(e) {
+      const card = e.currentTarget.closest('.pcard');
+      if (!card) return;
+      const tooltip = card.querySelector('.pcard__shade-tooltip');
+      if (tooltip) tooltip.classList.remove('visible');
+    }
+
+    function handleQuickAdd(event, productId) {
+      event.stopPropagation();
+      const product = window.MoonlightEtoile.products.find(p => p.id === productId);
+      if (!product) return;
+      if (product.shades && product.shades.length) {
+        window.MoonlightEtoile.openQuickView(productId);
+      } else {
+        window.MoonlightEtoile.addToCart(productId);
+      }
+    }
+
+    // Category tab event delegation
+    document.getElementById('category-tabs').addEventListener('click', e => {
+      const tab = e.target.closest('.category-tab');
+      if (tab) setFilter(tab.dataset.filter);
     });
+
+    // Newsletter
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      window.MoonlightEtoile.showToast('You have joined the constellation.');
+      e.target.reset();
+    }
+
+    // Stagger reveal observer
+    function initReveal() {
+      const els = document.querySelectorAll('[data-reveal]:not(.revealed)');
+      if (!els.length) return;
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.dataset.revealDelay || entry.target.style.getPropertyValue('--stagger') || 0;
+            entry.target.style.transitionDelay = `${Math.min(Number(delay) * 60, 480)}ms`;
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+      els.forEach(el => observer.observe(el));
+    }
+
+    // Init
+    renderCollection();
+    initReveal();
   </script>
 </body>
 </html>

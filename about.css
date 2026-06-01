@@ -1,218 +1,220 @@
 /* ============================================================
-   Moonlight Étoile — About page
+   Moonlight Étoile — About Story Page Stylesheet
    ============================================================ */
 
-/* Origin grid */
-.about-origin__grid {
+/* ── Origin Story Spread ───────────────────────────────────── */
+.about-origin-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 6rem;
   align-items: center;
+  margin-bottom: 8rem;
 }
 
 .about-origin__visual {
   position: relative;
-  height: 560px;
+  aspect-ratio: 4/5;
+  background-color: rgba(22, 12, 38, 0.4);
 }
-.about-origin__image-main {
-  position: absolute;
-  top: 0; left: 0;
-  width: 75%; height: 80%;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-}
-.about-origin__image-accent {
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 52%; height: 50%;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-}
-.about-origin__placeholder { display: block; }
 
-.about-origin__heading {
-  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
-  margin-top: 1rem;
+.about-origin__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--color-border-light);
+}
+
+.about-origin__badge {
+  position: absolute;
+  bottom: 2rem; right: -2rem;
+  background-color: var(--color-glass-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  padding: 1.5rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  box-shadow: var(--shadow-glow-sm);
+  z-index: 10;
+}
+
+.about-origin__text h2 {
+  font-size: 3.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
+  line-height: 1.1;
 }
 
-.about-origin__body {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.about-origin__p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
 }
 
-/* Stats bar */
-.stats-bar {
-  background-color: var(--clr-ink);
-  padding-block: 3.5rem;
+/* ── Stats Highlight Ribbon ────────────────────────────────── */
+.about-stats {
+  background-color: rgba(22, 12, 38, 0.55);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 5rem 0;
+  margin-bottom: 8rem;
 }
-.stats-bar__grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+
+.about-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  text-align: center;
 }
-.stat-item { text-align: center; flex: 1; }
-.stat-item__number {
-  font-family: var(--ff-display);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 300;
-  color: var(--clr-white);
+
+.stat-item-luxe h3 {
+  font-size: 3.5rem;
+  font-family: var(--font-display);
+  color: var(--color-accent-gold);
+  margin-bottom: 0.5rem;
   line-height: 1;
 }
-.stat-item__number span { color: var(--clr-rose); font-size: 0.65em; }
-.stat-item__label {
-  font-size: 0.8rem;
-  color: rgba(255, 252, 249, 0.45);
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-.stat-divider {
-  width: 1px;
-  height: 60px;
-  background: rgba(255, 252, 249, 0.12);
-  flex-shrink: 0;
-}
 
-/* Ingredients list */
-.ingredients-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--clr-border);
-}
-.ingredient-row {
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  gap: 2rem;
-  align-items: start;
-  padding-block: 2.25rem;
-  border-bottom: 1px solid var(--clr-border);
-  transition: background-color 250ms ease;
-}
-.ingredient-row:hover { background-color: var(--clr-surface); }
-
-.ingredient-row__swatch {
-  width: 60px; height: 60px;
-  border-radius: var(--radius-md);
-  flex-shrink: 0;
-}
-.ingredient-row__name {
-  font-family: var(--ff-display);
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--clr-ink);
-  margin-bottom: 0.2rem;
-}
-.ingredient-row__source {
-  font-size: 0.75rem;
-  color: var(--clr-rose);
-  letter-spacing: 0.1em;
+.stat-item-luxe p {
+  font-size: 0.72rem;
+  font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-.ingredient-row__desc { max-width: 56ch; }
-.ingredient-row__used-in {
-  text-align: right;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.4rem;
-  padding-top: 0.25rem;
-  min-width: 160px;
-}
-.ingredient-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--clr-ink-soft);
-  background-color: var(--clr-surface-2);
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-xl);
-  transition: background-color 200ms ease, color 200ms ease;
-}
-.ingredient-tag:hover {
-  background-color: var(--clr-rose-light);
-  color: var(--clr-ink);
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
 }
 
-/* Sustainability section */
-.sustainability-section {
-  background-color: var(--clr-surface);
-  border-top: 1px solid var(--clr-border);
-  border-bottom: 1px solid var(--clr-border);
-  padding-block: var(--section-gap);
+/* ── Ingredients Grid ──────────────────────────────────────── */
+.ingredients-section {
+  background-color: transparent;
+  padding: 8rem 0;
+  margin-bottom: 8rem;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
-.sustainability-section__inner {
-  max-width: var(--max-w);
-  margin-inline: auto;
-  padding-inline: 2rem;
-}
-.sustainability-section__header { margin-bottom: 4rem; }
 
-.sustainability-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem 4rem;
-}
-.sustainability-item__icon {
-  margin-bottom: 1.25rem;
-}
-.sustainability-item__title {
-  font-family: var(--ff-display);
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: var(--clr-ink);
-  margin-bottom: 0.75rem;
-}
-.sustainability-item__desc { max-width: 42ch; }
-
-/* Team */
-.team-grid {
+.ingredients-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
-.team-member { display: flex; flex-direction: column; gap: 0.75rem; }
-.team-member__avatar {
-  width: 80px; height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.ingredient-card {
+  background-color: var(--color-glass-surface);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-light);
+  padding: 3rem 2.5rem;
+  transition: all 0.3s;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-gold);
+  box-shadow: var(--shadow-glow-sm);
+}
+
+.ingredient-card__swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  margin-bottom: 2rem;
+  background-color: var(--color-border);
+}
+
+.ingredient-card__name {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  flex-shrink: 0;
-}
-.team-member__initials {
-  font-family: var(--ff-display);
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: var(--clr-ink-soft);
-}
-.team-member__name {
-  font-family: var(--ff-display);
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--clr-ink);
-}
-.team-member__bio { max-width: 38ch; }
-
-/* Responsive */
-@media (max-width: 900px) {
-  .about-origin__grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-origin__visual { height: 320px; }
-  .stats-bar__grid { flex-wrap: wrap; gap: 2rem; }
-  .stat-divider { display: none; }
-  .stat-item { flex-basis: calc(50% - 1rem); }
-  .sustainability-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
+  color: var(--color-text-light);
 }
 
-@media (max-width: 640px) {
-  .ingredient-row { grid-template-columns: 44px 1fr; }
-  .ingredient-row__used-in { display: none; }
-  .team-grid { grid-template-columns: 1fr; }
-  .stat-item { flex-basis: 100%; }
+.ingredient-card__role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent-gold);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.ingredient-card__desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ── Sustainability Section ────────────────────────────────── */
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.sustainability-card {
+  background-color: var(--color-glass-surface);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-light);
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.sustainability-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-gold);
+}
+
+.sustainability-card svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent-gold);
+  margin: 0 auto 1.5rem;
+}
+
+.sustainability-card h3 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+.sustainability-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .about-origin-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .about-origin__badge {
+    position: static;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+  .about-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .ingredients-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sustainability-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+  }
+  .sustainability-grid {
+    grid-template-columns: 1fr;
+  }
 }

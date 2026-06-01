@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover product details, key active botanical ingredients, and dynamic directions for Moonlight Étoile's luxurious collections.">
+  <title>Product Details — Moonlight Étoile</title>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+
+  <!-- ── 1. Luxury Sticky Navbar ──────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      
+
+
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <div class="navbar__actions">
+        <span class="navbar__official-store" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text-muted); margin-right: 1.5rem; display: inline-block;">Official Store</span>
+        <!-- Wishlist -->
+        <a href="products.html" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </a>
+        
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon" aria-label="View Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Shop All</a>
+    <a href="about.html">About Brand</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="cart.html">View Cart</a>
+    <div class="mobile-nav__footer">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section detail-section">
+      <div class="container">
+        <div class="detail-layout" id="detail-renderer">
+          <!-- Rendered Dynamically via JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Luxury Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <h3>Moonlight Étoile</h3>
+          <p>Luxurious skincare and cosmetics inspired by the stars, formulated to let your natural beauty glow beyond.</p>
+        </div>
+        
+        <div class="footer__col">
+          <h4>Collection</h4>
+          <ul role="list">
+            <li><a href="products.html?category=skincare">Skincare Base</a></li>
+            <li><a href="products.html?category=cosmetics">Cosmetics Core</a></li>
+            <li><a href="products.html?subcategory=lips">Lips & Tint</a></li>
+            <li><a href="products.html?tag=Bestseller">Bestselling Radiance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Customer Care</h4>
+          <ul role="list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#faq">FAQ Help</a></li>
+            <li><a href="about.html#sustainability">Sustainability Sourcing</a></li>
+            <li><a href="about.html">Brand Origins</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__newsletter">
+          <h4>Be In The Circle</h4>
+          <p>Join for early launches and botanical wellness rituals.</p>
+          <form class="footer__newsletter-form" onsubmit="event.preventDefault(); window.MoonlightEtoile.showToast('Subscription saved!')">
+            <input type="email" class="footer__newsletter-input" placeholder="Your email address" required aria-label="Email Address">
+            <button type="submit" class="footer__newsletter-btn">&rarr;</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Moonlight Étoile Beauty. Sourced ethically. Cruelty-free certified.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <script>
+    // Global catalog access
+    const catalog = window.MoonlightEtoile.products;
+    const renderer = document.getElementById('detail-renderer');
+
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    // Load active product details
+    function loadProduct() {
+      let productId = getQueryParam('id') || 'moon-dew-serum';
+      let product = catalog.find(p => p.id === productId);
+      
+      // Fallback
+      if (!product) {
+        product = catalog.find(p => p.id === 'moon-dew-serum') || catalog[0];
+      }
+
+      document.title = `${product.name} — Moonlight Étoile`;
+      renderProductDetails(product);
+    }
+
+    // Render HTML elements dynamically based on product record
+    function renderProductDetails(product) {
+      // 1. Gallery thumb elements
+      const thumbsHtml = `
+        <div class="gallery-thumb active" onclick="switchMainImage(this, '${product.image}')">
+          <img src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="gallery-thumb" onclick="switchMainImage(this, '${product.hoverImage}')">
+          <img src="${product.hoverImage}" alt="${product.name} detail view">
+        </div>
+      `;
+
+      // 2. Shades or volume info
+      let optionsHtml = '';
+      if (product.shades) {
+        optionsHtml = `
+          <div class="detail-option-group">
+            <div class="detail-option-title">
+              <span>Select Shade</span>
+              <span id="active-shade-label">${product.shades[0]}</span>
+            </div>
+            <div class="detail-shade-selector">
+              ${product.shades.map((s, idx) => `
+                <button class="shade-dot ${idx === 0 ? 'active' : ''}" data-shade="${s}" title="${s}" onclick="selectShade(this, '${s}')"></button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } else {
+        const volumeText = product.category === 'skincare' ? '50 ml / 1.7 fl. oz' : 'Standard Full Size';
+        optionsHtml = `
+          <div class="detail-option-group">
+            <div class="detail-option-title">
+              <span>Size</span>
+            </div>
+            <span class="volume-tag">${volumeText}</span>
+          </div>
+        `;
+      }
+
+      // 3. Benefits items
+      const benefitsListHtml = product.benefits.map(b => `<li>${b}</li>`).join('');
+
+      renderer.innerHTML = `
+        <!-- Left: Gallery -->
+        <div class="detail-gallery" data-reveal>
+          <div class="gallery-thumbs">
+            ${thumbsHtml}
+          </div>
+          <div class="gallery-main">
+            <img src="${product.image}" id="main-gallery-img" alt="${product.name}">
+          </div>
+        </div>
+
+        <!-- Right: Purchase details panel -->
+        <div class="detail-panel" data-reveal data-reveal-delay="1">
+          <span class="detail-category">${product.category} &middot; ${product.subcategory}</span>
+          <h1 class="detail-title">${product.name}</h1>
+          
+          <div class="detail-rating">
+            <span class="stars">★★★★★</span>
+            <span class="count">(${product.reviewsCount} verified reviews)</span>
+          </div>
+
+          <div class="detail-price">&#8369;${product.price.toLocaleString()}</div>
+          <p class="detail-desc">${product.desc}</p>
+
+          ${optionsHtml}
+
+          <!-- Qty selector & Add to cart -->
+          <div class="detail-actions-row">
+            <div class="qty-selector">
+              <button class="qty-btn" onclick="modifyQty(-1)" aria-label="Decrease quantity">&minus;</button>
+              <input type="text" class="qty-input" id="detail-qty-val" value="1" readonly>
+              <button class="qty-btn" onclick="modifyQty(1)" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="btn btn--primary" id="detail-add-cart-btn" onclick="handleAddToCart('${product.id}')">
+              <span>Add to Cart</span>
+            </button>
+            <button class="detail-wishlist-btn" id="detail-wish-toggle" onclick="handleWishlist('${product.id}')" aria-label="Toggle wishlist">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+
+          <!-- Key Benefits Icons -->
+          <div class="detail-benefits">
+            <div class="benefit-icon-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+              </svg>
+              <h4>Vegan certified</h4>
+            </div>
+            <div class="benefit-icon-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <h4>Cruelty-Free</h4>
+            </div>
+            <div class="benefit-icon-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+              </svg>
+              <h4>Recyclable</h4>
+            </div>
+            <div class="benefit-icon-card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              <h4>Clean Science</h4>
+            </div>
+          </div>
+
+          <!-- Dynamic Accordions -->
+          <div class="accordion-wrapper">
+            <!-- How to Use -->
+            <article class="accordion-item">
+              <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                <span>How to Use</span>
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <p>${product.directions}</p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Key Benefits -->
+            <article class="accordion-item">
+              <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                <span>Key Benefits</span>
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <ul style="list-style: disc;">
+                    ${benefitsListHtml}
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ingredients -->
+            <article class="accordion-item">
+              <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                <span>Full Ingredients</span>
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <p style="font-style: italic;">${product.ingredients}</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Verified Customer Reviews -->
+          <div class="reviews-section">
+            <div class="reviews-title-block">
+              <h3>Customer Reviews</h3>
+              <div class="reviews-summary">
+                <span class="big-rating">${product.rating}</span>
+                <div>
+                  <div style="color: var(--color-accent-gold); font-size: 0.9rem;">★★★★★</div>
+                  <div style="font-size: 0.72rem; color: var(--color-text-muted); font-weight: 500; text-transform: uppercase;">Based on ${product.reviewsCount} reviews</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="reviews-grid" role="list">
+              <!-- Review 1 -->
+              <article class="review-row" role="listitem">
+                <div class="review-row__header">
+                  <div class="review-row__user">
+                    <img src="https://images.pexels.com/photos/3785141/pexels-photo-3785141.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Naomi K." class="review-row__avatar">
+                    <div>
+                      <h4 class="review-row__name">Naomi K.</h4>
+                      <div class="review-row__meta">
+                        <span>Verified Purchase</span>
+                        <span class="review-row__badge">Glow Circle</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-row__stars">★★★★★</div>
+                </div>
+                <h4 class="review-row__title">Absolutely flawless formulation</h4>
+                <p class="review-row__body">I was skeptical at first, but after using this formulation for 10 days, my skin has a visible brightness and health that I haven\'t seen in years. It feels incredibly premium, sinks in instantly, and leaves absolutely no residue.</p>
+              </article>
+
+              <!-- Review 2 -->
+              <article class="review-row" role="listitem">
+                <div class="review-row__header">
+                  <div class="review-row__user">
+                    <img src="https://images.pexels.com/photos/3785139/pexels-photo-3785139.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Thomas B." class="review-row__avatar">
+                    <div>
+                      <h4 class="review-row__name">Thomas B.</h4>
+                      <div class="review-row__meta">
+                        <span>Verified Purchase</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-row__stars">★★★★★</div>
+                </div>
+                <h4 class="review-row__title">Incredibly gentle, beautiful packaging</h4>
+                <p class="review-row__body">Everything about this brand screams luxury. The heavy glass containers, the delicate textures, the absolute purity. My dry skin is in love with this. A permanent staple in my daily routine!</p>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      `;
+
+      // Animate cards on render
+      const reveals = renderer.querySelectorAll('[data-reveal]');
+      reveals.forEach(el => requestAnimationFrame(() => el.classList.add('revealed')));
+
+      // Sync active wishlist star states
+      const wishlist = window.MoonlightEtoile.getWishlist();
+      const wishBtn = document.getElementById('detail-wish-toggle');
+      if (wishBtn && wishlist.includes(product.id)) {
+        wishBtn.classList.add('active');
+        const svg = wishBtn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', 'var(--color-rose)');
+          svg.setAttribute('stroke', 'var(--color-rose)');
+        }
+      }
+    }
+
+    // Interactive Thumbnail Image switcher
+    function switchMainImage(thumb, url) {
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      document.getElementById('main-gallery-img').src = url;
+    }
+
+    // Active shade selector toggle
+    let selectedShadeVal = '';
+    function selectShade(dot, shade) {
+      document.querySelectorAll('.shade-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+      document.getElementById('active-shade-label').textContent = shade;
+      selectedShadeVal = shade;
+    }
+
+    // Active Quantity adjusters
+    function modifyQty(amount) {
+      const qtyInput = document.getElementById('detail-qty-val');
+      let currentVal = parseInt(qtyInput.value) || 1;
+      currentVal = Math.max(1, currentVal + amount);
+      qtyInput.value = currentVal;
+    }
+
+    // Add to cart handler
+    function handleAddToCart(id) {
+      const qty = parseInt(document.getElementById('detail-qty-val').value) || 1;
+      // Fetch selected shade if shade selector is present
+      let shade = selectedShadeVal;
+      if (!shade) {
+        const activeDot = document.querySelector('.shade-dot.active');
+        if (activeDot) shade = activeDot.dataset.shade;
+      }
+      window.MoonlightEtoile.addToCart(id, shade, qty);
+    }
+
+    // Toggle wishlist handler
+    function handleWishlist(id) {
+      window.MoonlightEtoile.toggleWishlist(id);
+      const wishlist = window.MoonlightEtoile.getWishlist();
+      const wishBtn = document.getElementById('detail-wish-toggle');
+      if (wishBtn) {
+        const isStarred = wishlist.includes(id);
+        wishBtn.classList.toggle('active', isStarred);
+        const svg = wishBtn.querySelector('svg');
+        if (svg) {
+          svg.setAttribute('fill', isStarred ? 'var(--color-rose)' : 'none');
+          svg.setAttribute('stroke', isStarred ? 'var(--color-rose)' : 'currentColor');
+        }
+      }
+    }
+
+    // Dynamic Accordions handler
+    function toggleAccordion(trigger) {
+      const item = trigger.closest('.accordion-item');
+      const content = item.querySelector('.accordion-content');
+      const isOpen = item.classList.toggle('open');
+      
+      if (isOpen) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      } else {
+        content.style.maxHeight = '0';
+      }
+    }
+
+    // Run on startup
+    loadProduct();
+  </script>
+
+</body>
+</html>

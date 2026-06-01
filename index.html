@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Moonlight Étoile — Thoughtful skincare rituals for luminous, healthy skin. Formulated with botanicals sourced from certified ethical suppliers." />
-  <title>Moonlight Étoile — Radiant Skincare Rituals</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="home.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Moonlight Étoile — Luxury skincare and cosmetics crafted to illuminate your natural beauty. Glow Beyond The Stars with our premium vegan formulations.">
+  <title>Moonlight Étoile — Premium Skincare & Cosmetics</title>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
-  <!-- ── Navbar ─────────────────────────────────────────── -->
+  <!-- ── 1. Luxury Sticky Navbar ──────────────────────────────── -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="Moonlight Étoile home">Moonlight Étoile</a>
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      
+      
 
       <ul class="navbar__links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
+      
       <div class="navbar__actions">
-        <a href="cart.html" class="cart-icon" aria-label="View cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        <span class="navbar__official-store" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text-muted); margin-right: 1.5rem; display: inline-block;">Official Store</span>
+        <!-- Wishlist -->
+        <a href="products.html" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
-          <span class="cart-badge" aria-label="Cart items">0</span>
         </a>
+        
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon" aria-label="View Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        
+        <!-- Hamburger -->
         <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
@@ -38,344 +54,497 @@
     </div>
   </nav>
 
-  <!-- ── Mobile Nav ─────────────────────────────────────── -->
+  <!-- ── 2. Mobile Nav Drawer ────────────────────────────────── -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
+    <a href="products.html">Shop All</a>
+    <a href="about.html">About Brand</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="cart.html">View Cart</a>
     <div class="mobile-nav__footer">
       <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
       <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
     </div>
   </nav>
 
-  <!-- ── Main ───────────────────────────────────────────── -->
-  <main class="page-content">
-
-    <!-- Hero -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero__inner container">
+  <main>
+    <!-- ── 3. Campaign Hero Banner ────────────────────────────── -->
+    <section class="hero" aria-label="Moonlight Étoile Campaign Hero">
+      <div class="container hero__inner">
+        <!-- Hero content (Left column) -->
         <div class="hero__content">
-          <p class="t-label" data-reveal>Botanical — Ethical — Intentional</p>
-          <h1 class="hero__headline t-display" data-reveal data-reveal-delay="1">
-            Skin that<br><em>breathes</em><br>deeply.
+          <p class="hero__tagline" data-reveal>Moonlight Étoile – Glow Beyond the Stars</p>
+          <h1 class="hero__title" data-reveal data-reveal-delay="1">
+            MOONLIGHT <br><span class="italic-serif">Étoile</span>
           </h1>
-          <p class="hero__body t-body" data-reveal data-reveal-delay="2">
-            Each formula begins with a single question:<br>what does skin actually need right now?
+          <p class="hero__subtitle" data-reveal data-reveal-delay="2">
+            COSMIC BEAUTY AND LIGHT
           </p>
-          <div class="hero__ctas" data-reveal data-reveal-delay="3">
-            <a href="products.html" class="btn btn--primary">Shop the ritual</a>
-            <a href="about.html" class="btn btn--outline">Our philosophy</a>
+          <div class="hero__actions" data-reveal data-reveal-delay="3">
+            <a href="products.html" class="btn btn--primary"><span>Shop Now</span></a>
           </div>
         </div>
 
-        <div class="hero__visual" data-reveal data-reveal-delay="2">
-          <div class="hero__image-wrap">
-            <div class="hero__image-placeholder" aria-hidden="true">
-              <img
-                src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=840&h=1120&fit=crop"
-                alt=""
-                class="img-cover"
-                loading="eager"
-                fetchpriority="high"
-              />
-              <span class="hero__image-label">Sérum Lumière</span>
-            </div>
-          </div>
-          <div class="hero__stat-card" data-reveal data-reveal-delay="4">
-            <p class="hero__stat-number">94<span>%</span></p>
-            <p class="hero__stat-label">saw visible radiance<br>within 14 days</p>
+        <!-- Circular hero image cutout (Right column) -->
+        <div class="hero__visual-container" data-reveal data-reveal-delay="2">
+          <div class="hero__portrait-frame">
+            <img src="images/newheroimage.jpg" alt="Moonlight Étoile Campaign Portrait" class="hero__portrait-img">
           </div>
         </div>
-      </div>
-
-      <div class="hero__scroll-hint" aria-hidden="true">
-        <div class="hero__scroll-line"></div>
-        <span>Scroll</span>
       </div>
     </section>
-
-    <!-- Marquee Strip -->
-    <div class="marquee-strip" aria-hidden="true">
-      <div class="marquee-track">
-        <!-- duplicated for seamless loop -->
-        <span class="marquee-item"><span class="marquee-dot"></span>Dermatologist tested</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Cruelty free</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Fragrance optional</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Sustainable packaging</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Certified botanicals</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Formulated in Seoul</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Dermatologist tested</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Cruelty free</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Fragrance optional</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Sustainable packaging</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Certified botanicals</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Formulated in Seoul</span>
-      </div>
-    </div>
-
-    <!-- Featured Products -->
-    <section class="section" id="featured" aria-labelledby="featured-heading">
+    <!-- ── 4. Featured Categories (Editorial Bento Grid) ──────── -->
+    <section class="section" aria-label="Shop by category">
       <div class="container">
-        <div class="section-header">
-          <div class="section-header__left">
-            <p class="t-label" data-reveal>Best Sellers</p>
-            <h2 id="featured-heading" data-reveal data-reveal-delay="1">
-              Start your<br>ritual here.
-            </h2>
-          </div>
-          <a href="products.html" class="btn btn--outline" data-reveal>View all products</a>
+        <div class="section-title-block" data-reveal>
+          <span class="t-label">Curated Rituals</span>
+          <h2>Shop by Collection</h2>
         </div>
-
-        <div class="products-grid" role="list">
-          <!-- Card 1 -->
-          <article class="product-card" role="listitem" data-reveal>
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sérum Lumière" loading="eager" class="img-cover">
-              <span class="product-card__badge product-card__badge--new">New</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Sérum Lumière" data-price="68">Quick add — $68</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <h3 class="product-card__name">Sérum Lumière</h3>
-              <p class="product-card__desc">Vitamin C brightening treatment</p>
-              <p class="product-card__price">$68</p>
+        
+        <div class="categories-grid" role="list">
+          <!-- Skincare -->
+          <article class="category-card" role="listitem" data-reveal>
+            <div class="category-card__bg" style="background-image: url('images/Products,skin care/cleanser.jpg');"></div>
+            <div class="category-card__content">
+              <h3 class="category-card__title">Skincare</h3>
+              <a href="products.html?category=skincare" class="category-card__link">Discover Rituals &rarr;</a>
             </div>
           </article>
 
-          <!-- Card 2 -->
-          <article class="product-card" role="listitem" data-reveal data-reveal-delay="1">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Barrier Dew Cream" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Barrier Dew Cream" data-price="54">Quick add — $54</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <h3 class="product-card__name">Barrier Dew Cream</h3>
-              <p class="product-card__desc">Deep moisture, ceramide-rich</p>
-              <p class="product-card__price">$54</p>
+          <!-- Complexion -->
+          <article class="category-card" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="category-card__bg" style="background-image: url('images/Products,skin care/moisturizer.jpg');"></div>
+            <div class="category-card__content">
+              <h3 class="category-card__title">Complexion</h3>
+              <a href="products.html?subcategory=foundation" class="category-card__link">Flawless Bases &rarr;</a>
             </div>
           </article>
 
-          <!-- Card 3 -->
-          <article class="product-card" role="listitem" data-reveal data-reveal-delay="2">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Petal Toner Essence" loading="lazy" class="img-cover">
-              <span class="product-card__badge">Bestseller</span>
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Petal Toner Essence" data-price="42">Quick add — $42</button>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <h3 class="product-card__name">Petal Toner Essence</h3>
-              <p class="product-card__desc">Rose + Centella first essence</p>
-              <p class="product-card__price">$42 <s>$58</s></p>
+          <!-- Lips -->
+          <article class="category-card" role="listitem" data-reveal>
+            <div class="category-card__bg" style="background-image: url('images/Products,skin care/14.jpg');"></div>
+            <div class="category-card__content">
+              <h3 class="category-card__title">Lips</h3>
+              <a href="products.html?subcategory=lipstick" class="category-card__link">Color & Tint &rarr;</a>
             </div>
           </article>
 
-          <!-- Card 4 -->
-          <article class="product-card" role="listitem" data-reveal data-reveal-delay="3">
-            <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Midnight Repair Oil" loading="lazy" class="img-cover">
-              <div class="product-card__quick-add">
-                <button class="btn" data-add-to-cart data-name="Midnight Repair Oil" data-price="76">Quick add — $76</button>
-              </div>
+          <!-- Eyes -->
+          <article class="category-card" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="category-card__bg" style="background-image: url('images/Products,skin care/Brightening.jpg');"></div>
+            <div class="category-card__content">
+              <h3 class="category-card__title">Eyes</h3>
+              <a href="products.html?subcategory=mascara" class="category-card__link">Stellar Definition &rarr;</a>
             </div>
-            <div class="product-card__info">
-              <h3 class="product-card__name">Midnight Repair Oil</h3>
-              <p class="product-card__desc">Retinol-boosted facial oil</p>
-              <p class="product-card__price">$76</p>
+          </article>
+
+          <!-- Beauty Tools -->
+          <article class="category-card" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="category-card__bg" style="background-image: url('images/Products,skin care/Toner.jpg');"></div>
+            <div class="category-card__content">
+              <h3 class="category-card__title">Beauty Tools</h3>
+              <a href="products.html?subcategory=beauty_tools" class="category-card__link">Elevated Utilities &rarr;</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Philosophy / Split strip -->
-    <section class="philosophy-strip">
-      <div class="philosophy-strip__text" data-reveal>
-        <p class="t-label">Our conviction</p>
-        <h2 class="t-display">Less, but<br><em>precisely right.</em></h2>
-        <p class="t-body" style="margin-top:1.5rem;max-width:42ch;">
-          We edit obsessively. Every ingredient earns its place in the formula — nothing decorative, nothing unnecessary. The result is skincare that works without asking you to trust us.
-        </p>
-        <a href="about.html" class="btn btn--outline" style="margin-top:2.25rem">Read our story</a>
-      </div>
-      <div class="philosophy-strip__visual" aria-hidden="true">
-        <div class="philosophy-strip__grid">
-          <div class="philosophy-strip__tile" style="grid-area:a;"><img src="https://images.pexels.com/photos/5069291/pexels-photo-5069291.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="" loading="lazy" class="img-cover"></div>
-          <div class="philosophy-strip__tile" style="grid-area:b;"><img src="https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="" loading="lazy" class="img-cover"></div>
-          <div class="philosophy-strip__tile" style="background:var(--clr-surface-2);grid-area:c;display:flex;align-items:center;justify-content:center;">
-            <p style="font-family:var(--ff-display);font-size:2.5rem;font-weight:300;color:var(--clr-ink-soft);">14</p>
-          </div>
-          <div class="philosophy-strip__tile" style="grid-area:d;"><img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" alt="" loading="lazy" class="img-cover"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section" aria-labelledby="testimonials-heading">
+    <!-- ── 5. Best Sellers Section ────────────────────────────── -->
+    <section class="section" style="background-color: transparent;" aria-label="Bestselling items">
       <div class="container">
-        <div class="section-header">
-          <div class="section-header__left">
-            <p class="t-label" data-reveal>Real results</p>
-            <h2 id="testimonials-heading" data-reveal data-reveal-delay="1">What our<br>community says.</h2>
+        <div class="section-title-block" data-reveal>
+          <span class="t-label">Most Coveted</span>
+          <h2>The Moonlight Bestsellers</h2>
+        </div>
+
+        <div class="scroller-container">
+          <div class="scroller-track" id="bestsellers-track">
+            <!-- Rendered Dynamically via JS for zero redundancy, or seeded cleanly below -->
+            <!-- Cleanser Card -->
+            <!-- Cleanser Card -->
+            <article class="product-card">
+              <div class="product-card__image-container">
+                <img src="images/Products,skin care/cleanser.jpg" alt="Moonmilk Cleanser" class="product-card__img">
+                <img src="images/Products,skin care/Cleanser (2).jpg" alt="Moonmilk Cleanser application" class="product-card__img-hover">
+                <span class="product-card__badge">Bestseller</span>
+                <button class="product-card__wishlist" data-id="moonmilk-cleanser" onclick="window.MoonlightEtoile.toggleWishlist('moonmilk-cleanser')" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="product-card__quick-add-btn" onclick="window.MoonlightEtoile.openQuickView('moonmilk-cleanser')" aria-label="Quick Add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 18px; height: 18px;">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__title"><a href="detail.html?id=moonmilk-cleanser">Moonmilk Cleanser</a></h3>
+                <div class="product-card__price">&#8369;399</div>
+                <p class="product-card__meta">Skincare &middot; Cleanser</p>
+              </div>
+            </article>
+
+            <!-- Toner Card -->
+            <article class="product-card">
+              <div class="product-card__image-container">
+                <img src="images/Products,skin care/Toner.jpg" alt="Aqua Glow Toner" class="product-card__img">
+                <img src="images/Products,skin care/5.jpg" alt="Aqua Glow Toner model" class="product-card__img-hover">
+                <span class="product-card__badge">New</span>
+                <button class="product-card__wishlist" data-id="aqua-glow-toner" onclick="window.MoonlightEtoile.toggleWishlist('aqua-glow-toner')" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="product-card__quick-add-btn" onclick="window.MoonlightEtoile.openQuickView('aqua-glow-toner')" aria-label="Quick Add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 18px; height: 18px;">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__title"><a href="detail.html?id=aqua-glow-toner">Aqua Glow Toner</a></h3>
+                <div class="product-card__price">&#8369;449</div>
+                <p class="product-card__meta">Skincare &middot; Toner</p>
+              </div>
+            </article>
+
+            <!-- Moisturizer Card -->
+            <article class="product-card">
+              <div class="product-card__image-container">
+                <img src="images/Products,skin care/moisturizer.jpg" alt="Starlit Hydration Cream" class="product-card__img">
+                <img src="images/Products,skin care/7.jpg" alt="Starlit Hydration Cream model" class="product-card__img-hover">
+                <span class="product-card__badge">Bestseller</span>
+                <button class="product-card__wishlist" data-id="starlit-hydration-cream" onclick="window.MoonlightEtoile.toggleWishlist('starlit-hydration-cream')" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="product-card__quick-add-btn" onclick="window.MoonlightEtoile.openQuickView('starlit-hydration-cream')" aria-label="Quick Add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 18px; height: 18px;">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__title"><a href="detail.html?id=starlit-hydration-cream">Starlit Hydration Cream</a></h3>
+                <div class="product-card__price">&#8369;499</div>
+                <p class="product-card__meta">Skincare &middot; Moisturizer</p>
+              </div>
+            </article>
+
+            <!-- Kiss Tint Card -->
+            <article class="product-card">
+              <div class="product-card__image-container">
+                <img src="images/Products,skin care/14.jpg" alt="Kiss Tint Collection" class="product-card__img">
+                <img src="images/Products,skin care/10.jpg" alt="Kiss Tint shades" class="product-card__img-hover">
+                <span class="product-card__badge">Bestseller</span>
+                <button class="product-card__wishlist" data-id="kiss-tint-collection" onclick="window.MoonlightEtoile.toggleWishlist('kiss-tint-collection')" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="product-card__quick-add-btn" onclick="window.MoonlightEtoile.openQuickView('kiss-tint-collection')" aria-label="Quick Add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 18px; height: 18px;">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__title"><a href="detail.html?id=kiss-tint-collection">Kiss Tint Collection</a></h3>
+                <div class="product-card__price">&#8369;299</div>
+                <p class="product-card__meta">Cosmetics &middot; Lip Tint</p>
+              </div>
+            </article>
+
+            <!-- Matte Lipstick Card -->
+            <article class="product-card">
+              <div class="product-card__image-container">
+                <img src="images/Products,skin care/5.jpg" alt="Matte Story Lipstick" class="product-card__img">
+                <img src="images/Products,skin care/11.jpg" alt="Matte Story Lipstick model" class="product-card__img-hover">
+                <span class="product-card__badge">Matte Story</span>
+                <button class="product-card__wishlist" data-id="matte-story-lipstick" onclick="window.MoonlightEtoile.toggleWishlist('matte-story-lipstick')" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="product-card__quick-add-btn" onclick="window.MoonlightEtoile.openQuickView('matte-story-lipstick')" aria-label="Quick Add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 18px; height: 18px;">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__title"><a href="detail.html?id=matte-story-lipstick">Matte Story Lipstick</a></h3>
+                <div class="product-card__price">&#8369;399</div>
+                <p class="product-card__meta">Cosmetics &middot; Lipstick</p>
+              </div>
+            </article>
+
+            <!-- Lip Gloss Card -->
+            <article class="product-card">
+              <div class="product-card__image-container">
+                <img src="images/Products,skin care/7.jpg" alt="Glow Finish Lip Gloss" class="product-card__img">
+                <img src="images/Products,skin care/12.jpg" alt="Glow Finish Lip Gloss model" class="product-card__img-hover">
+                <span class="product-card__badge">Bestseller</span>
+                <button class="product-card__wishlist" data-id="glow-finish-lipgloss" onclick="window.MoonlightEtoile.toggleWishlist('glow-finish-lipgloss')" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="product-card__quick-add-btn" onclick="window.MoonlightEtoile.openQuickView('glow-finish-lipgloss')" aria-label="Quick Add">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 18px; height: 18px;">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__info">
+                <h3 class="product-card__title"><a href="detail.html?id=glow-finish-lipgloss">Glow Finish Lip Gloss</a></h3>
+                <div class="product-card__price">&#8369;199</div>
+                <p class="product-card__meta">Cosmetics &middot; Lip Gloss</p>
+              </div>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. Brand Philosophy (Asymmetric Story Spread) ──────── -->
+    <section class="philosophy" aria-label="Brand Philosophy">
+      <div class="container">
+        <div class="philosophy__grid">
+          <div class="philosophy__visual" data-reveal>
+            <img src="images/Products,skin care/9.jpg" alt="Moonlight beauty photoshoot model" loading="lazy">
           </div>
+          <div class="philosophy__text" data-reveal data-reveal-delay="1">
+            <span class="t-label">Our Core Creed</span>
+            <h2 class="philosophy__title">Beauty Inspired <br>by <span class="italic-serif">Moonlight</span></h2>
+            <p class="philosophy__desc">
+              Moonlight Étoile combines advanced clean skincare science with elegant beauty essentials. Our premium formulations highlight, nourish, and reveal your natural radiance, allowing your true self to shine beautifully.
+            </p>
+            
+            <div class="philosophy__values">
+              <div class="value-item">
+                <h4>Radiant Glow</h4>
+                <p>Formulations structured around active, skin-loving nutrients that nourish deeply.</p>
+              </div>
+              <div class="value-item">
+                <h4>Cruelty-Free Purity</h4>
+                <p>100% vegan-friendly ingredients sourced under strict ethical standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. Dynamic Showcase Section ────────────────────────── -->
+    <section class="section showcase-section" aria-label="Interactive highlight showcase">
+      <div class="container">
+        <div class="section-title-block" data-reveal>
+          <span class="t-label">Interactive Spotlights</span>
+          <h2>Formulas in Motion</h2>
+        </div>
+        
+        <div class="showcase-grid">
+          <!-- Selection Menu -->
+          <div class="showcase-selector" data-reveal>
+            <button class="showcase-btn active" onclick="switchShowcase(this, 'sc-toner')">
+              <h3>Aqua Glow Hydrating Toner</h3>
+              <p>Deep skin prep with active fermented botanical waters</p>
+            </button>
+            <button class="showcase-btn" onclick="switchShowcase(this, 'sc-cream')">
+              <h3>Starlit Hydration Cream</h3>
+              <p>Cream barrier hydration with squalane and 5x ceramides</p>
+            </button>
+            <button class="showcase-btn" onclick="switchShowcase(this, 'sc-sunscreen')">
+              <h3>Lumi Shield Sunscreen</h3>
+              <p>Transparent SPF 50 shield leaves no white trace</p>
+            </button>
+          </div>
+
+          <!-- Viewer Display Frame -->
+          <div class="showcase-viewer" data-reveal data-reveal-delay="1">
+            
+            <!-- Toner Display -->
+            <div class="showcase-viewer-item" id="sc-toner" style="display: flex; gap: 2rem; width: 100%;">
+              <img src="images/Products,skin care/Toner.jpg" alt="Aqua Glow Toner Bottle" class="showcase-img">
+              <div class="showcase-info">
+                <h3>Aqua Glow Toner</h3>
+                <p>Experience deep, weightless hydration. Fermented green tea extract and rich birch sap lock down hydration at cellular depth, preparing skin to maximize serum absorption.</p>
+                <a href="detail.html?id=aqua-glow-toner" class="btn btn--outline"><span>Explore Toner</span></a>
+              </div>
+            </div>
+
+            <!-- Cream Display -->
+            <div class="showcase-viewer-item" id="sc-cream" style="display: none; gap: 2rem; width: 100%;">
+              <img src="images/Products,skin care/moisturizer.jpg" alt="Starlit Hydration Cream Jar" class="showcase-img">
+              <div class="showcase-info">
+                <h3>Starlit Cream</h3>
+                <p>Our award-winning five-ceramide complex melts immediately into your skin barrier to replenish dehydrated lipids, protecting against dynamic water loss all day.</p>
+                <a href="detail.html?id=starlit-hydration-cream" class="btn btn--outline"><span>Explore Cream</span></a>
+              </div>
+            </div>
+
+            <!-- Sunscreen Display -->
+            <div class="showcase-viewer-item" id="sc-sunscreen" style="display: none; gap: 2rem; width: 100%;">
+              <img src="images/Products,skin care/Brightening.jpg" alt="Lumi Shield Sunscreen Bottle" class="showcase-img">
+              <div class="showcase-info">
+                <h3>Lumi Shield SPF</h3>
+                <p>Complete broad-spectrum defense in a revolutionary invisible skin gel. Free of chemical sunscreen odors, completely weightless, and doubles as an oil-controlling primer.</p>
+                <a href="detail.html?id=lumi-shield-sunscreen" class="btn btn--outline"><span>Explore Sunscreen</span></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. Luxury Beauty Testimonials ──────────────────────── -->
+    <section class="section" aria-label="Customer Testimonials">
+      <div class="container">
+        <div class="section-title-block" data-reveal>
+          <span class="t-label">Moonlight Circle Reviews</span>
+          <h2>Loved by Luminaries</h2>
         </div>
 
         <div class="testimonials-grid">
-          <blockquote class="testimonial" data-reveal>
-            <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
-            <p class="testimonial__body">"I've tried six vitamin C serums. The Sérum Lumière is the first one that didn't irritate my rosacea-prone skin and still visibly worked within two weeks."</p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar"><img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Nara Lindqvist"></div>
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card" data-reveal>
+            <div class="testimonial-card__stars">★★★★★</div>
+            <blockquote class="testimonial-card__quote">
+              &ldquo;The Moon Dew Skin Tint is a revelation. It feels like absolute silk, covers redness beautifully, and makes my skin look completely airbrushed.&rdquo;
+            </blockquote>
+            <div class="testimonial-card__author">
+              <img src="https://images.pexels.com/photos/3618162/pexels-photo-3618162.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Clara Vance avatar" class="testimonial-card__avatar" loading="lazy">
               <div>
-                <p class="testimonial__name">Nara Lindqvist</p>
-                <p class="t-muted">Stockholm · Verified buyer</p>
+                <h4 class="testimonial-card__name">Clara Vance</h4>
+                <p class="testimonial-card__title">Verified Buyer &middot; Seoul</p>
               </div>
-            </footer>
-          </blockquote>
+            </div>
+          </article>
 
-          <blockquote class="testimonial testimonial--featured" data-reveal data-reveal-delay="1">
-            <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
-            <p class="testimonial__body">"The Barrier Dew Cream feels like nothing I've used before — it's almost weightless but my skin has genuinely never felt more comfortable through a dry Seoul winter."</p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mirae Kwon"></div>
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card" data-reveal data-reveal-delay="1">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <blockquote class="testimonial-card__quote">
+              &ldquo;I have highly sensitive skin, and the Moonmilk Cleanser is the only formula that cleanses thoroughly without leaving my skin feeling tight.&rdquo;
+            </blockquote>
+            <div class="testimonial-card__author">
+              <img src="https://images.pexels.com/photos/3785139/pexels-photo-3785139.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Mateo Silva avatar" class="testimonial-card__avatar" loading="lazy">
               <div>
-                <p class="testimonial__name">Mirae Kwon</p>
-                <p class="t-muted">Seoul · Verified buyer</p>
+                <h4 class="testimonial-card__name">Mateo Silva</h4>
+                <p class="testimonial-card__title">Verified Buyer &middot; São Paulo</p>
               </div>
-            </footer>
-          </blockquote>
+            </div>
+          </article>
 
-          <blockquote class="testimonial" data-reveal data-reveal-delay="2">
-            <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
-            <p class="testimonial__body">"Finally a brand that doesn't overclaim. The Petal Essence is exactly what it says — gentle, effective, and my skin texture improved noticeably after three weeks."</p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Théa Arno"></div>
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card" data-reveal data-reveal-delay="2">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <blockquote class="testimonial-card__quote">
+              &ldquo;Lumi Shield is the holy grail. There is no white cast, no shine, just a beautiful natural satin finish that locks in moisture perfectly.&rdquo;
+            </blockquote>
+            <div class="testimonial-card__author">
+              <img src="https://images.pexels.com/photos/3785141/pexels-photo-3785141.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Aiko Tanaka avatar" class="testimonial-card__avatar" loading="lazy">
               <div>
-                <p class="testimonial__name">Théa Arno</p>
-                <p class="t-muted">Lyon · Verified buyer</p>
+                <h4 class="testimonial-card__name">Aiko Tanaka</h4>
+                <p class="testimonial-card__title">Verified Buyer &middot; Berlin</p>
               </div>
-            </footer>
-          </blockquote>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter-section section--sm">
+    <!-- ── 9. Elegant Newsletter Circle ───────────────────────── -->
+    <section class="newsletter-section" aria-label="Join Moonlight Newsletter">
       <div class="container">
-        <div class="newsletter-card" data-reveal>
-          <div class="newsletter-card__content">
-            <p class="t-label">Early access</p>
-            <h2 class="t-heading" style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:300;margin-top:0.75rem;">
-              The ritual,<br>delivered monthly.
-            </h2>
-            <p class="t-body" style="margin-top:0.75rem;max-width:44ch;">
-              Formula notes, ingredient stories, and early access to new launches — no noise, just depth.
-            </p>
-          </div>
-          <form class="newsletter-form" id="newsletter-form" novalidate>
-            <div class="newsletter-form__row">
-              <label for="newsletter-email" class="sr-only">Email address</label>
-              <input
-                id="newsletter-email"
-                type="email"
-                class="newsletter-form__input"
-                placeholder="your@email.com"
-                autocomplete="email"
-                required
-              />
-              <button type="submit" class="btn btn--primary">Subscribe</button>
-            </div>
-            <p class="newsletter-form__note">No spam, ever. Unsubscribe in one click.</p>
-            <p class="newsletter-form__success" id="newsletter-success" hidden>
-              You're in. Welcome to the ritual.
-            </p>
+        <div class="newsletter-box" data-reveal>
+          <span class="t-label" style="color: var(--color-accent-gold);">Exclusive Entry</span>
+          <h2>Join The Moonlight Circle</h2>
+          <p>Receive premium product launches, curated botanical beauty tips, and VIP early access offers.</p>
+          <form class="newsletter-form-luxe" onsubmit="event.preventDefault(); window.MoonlightEtoile.showToast('Thank you for joining the Moonlight Circle!')">
+            <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit" class="btn"><span>Subscribe</span></button>
           </form>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ── Footer ─────────────────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
+  <!-- ── 10. Immersive Luxury Footer ────────────────────────── -->
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand">
-          <p class="footer__brand-name">Moonlight Étoile</p>
-          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
-          <div class="footer__socials">
-            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
-            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
-            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
-          </div>
+        <div class="footer__brand-col">
+          <h3>Moonlight Étoile</h3>
+          <p>Luxurious skincare and cosmetics inspired by the stars, formulated to let your natural beauty glow beyond.</p>
         </div>
-
-        <div>
-          <p class="footer__col-title">Shop</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="products.html">All Products</a></li>
-            <li><a href="products.html#serums">Serums</a></li>
-            <li><a href="products.html#moisturisers">Moisturisers</a></li>
-            <li><a href="products.html#essences">Essences</a></li>
-            <li><a href="products.html#oils">Facial Oils</a></li>
+        
+        <div class="footer__col">
+          <h4>Collection</h4>
+          <ul role="list">
+            <li><a href="products.html?category=skincare">Skincare Base</a></li>
+            <li><a href="products.html?category=cosmetics">Cosmetics Core</a></li>
+            <li><a href="products.html?subcategory=lips">Lips & Tint</a></li>
+            <li><a href="products.html?tag=Bestseller">Bestselling Radiance</a></li>
           </ul>
         </div>
 
-        <div>
-          <p class="footer__col-title">Brand</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="about.html#ingredients">Ingredients</a></li>
-            <li><a href="about.html#sustainability">Sustainability</a></li>
-            <li><a href="contact.html">Contact</a></li>
+        <div class="footer__col">
+          <h4>Customer Care</h4>
+          <ul role="list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#faq">FAQ Help</a></li>
+            <li><a href="about.html#sustainability">Sustainability Sourcing</a></li>
+            <li><a href="about.html">Brand Origins</a></li>
           </ul>
         </div>
 
-        <div>
-          <p class="footer__col-title">Help</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="#">Shipping &amp; Returns</a></li>
-            <li><a href="#">Skin Quiz</a></li>
-            <li><a href="#">Ingredient Glossary</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+        <div class="footer__newsletter">
+          <h4>Be In The Circle</h4>
+          <p>Join for early launches and botanical wellness rituals.</p>
+          <form class="footer__newsletter-form" onsubmit="event.preventDefault(); window.MoonlightEtoile.showToast('Subscription saved!')">
+            <input type="email" class="footer__newsletter-input" placeholder="Your email address" required aria-label="Email Address">
+            <button type="submit" class="footer__newsletter-btn">&rarr;</button>
+          </form>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
-        <nav class="footer__legal" aria-label="Legal links">
+        <p>&copy; 2026 Moonlight Étoile Beauty. Sourced ethically. Cruelty-free certified.</p>
+        <div class="footer__bottom-links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Cookie Preferences</a>
-        </nav>
+          <a href="#">Terms & Conditions</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  
   <script>
-    // Newsletter form
-    const form = document.getElementById('newsletter-form');
-    const success = document.getElementById('newsletter-success');
-    form?.addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('newsletter-email').value;
-      if (!email) return;
-      success.hidden = false;
-      form.querySelector('input').value = '';
-      window.MoonlightEtoile?.showToast('Welcome to the Moonlight Étoile ritual!');
-    });
+    // Tabbed Showcase switching script
+    function switchShowcase(btn, itemId) {
+      // Deactivate all buttons
+      document.querySelectorAll('.showcase-btn').forEach(b => b.classList.remove('active'));
+      // Activate clicked
+      btn.classList.add('active');
+      
+      // Hide all displays
+      document.querySelectorAll('.showcase-viewer-item').forEach(item => {
+        item.style.display = 'none';
+      });
+      // Show matching display
+      const activeItem = document.getElementById(itemId);
+      if (activeItem) {
+        activeItem.style.display = 'flex';
+      }
+    }
   </script>
+
 </body>
 </html>

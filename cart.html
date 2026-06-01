@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your Moonlight Étoile shopping cart — review your ritual before checkout." />
-  <title>Cart — Moonlight Étoile</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="cart.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your Moonlight Étoile luxury items, apply promo codes, and complete your premium checkout ritual.">
+  <title>Shopping Cart — Moonlight Étoile</title>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-
-  <!-- Navbar -->
+  <!-- ── 1. Luxury Sticky Navbar ──────────────────────────────── -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
+    <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo">Moonlight Étoile</a>
+      
+      <!-- Centered Moon Icon matching first image -->
+      <div class="navbar__moon" style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 8px #8A4FFF);">
+        <svg viewBox="0 0 24 24" fill="#D8B88A" stroke="#D8B88A" stroke-width="1.5" style="width: 22px; height: 22px;">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+      </div>
+
       <ul class="navbar__links" role="list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="products.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      
       <div class="navbar__actions">
-        <a href="cart.html" class="cart-icon" aria-label="View cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        <span class="navbar__official-store" style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-text-muted); margin-right: 1.5rem; display: inline-block;">Official Store</span>
+        <!-- Wishlist -->
+        <a href="products.html" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
-          <span class="cart-badge">0</span>
         </a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon" aria-label="View Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+        
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
@@ -35,375 +58,257 @@
       </div>
     </div>
   </nav>
-
   <!-- Mobile Nav -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
+    <a href="products.html">Shop All</a>
+    <a href="about.html">About Brand</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="cart.html">View Cart</a>
     <div class="mobile-nav__footer">
       <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
       <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
     </div>
   </nav>
 
-  <main class="page-content">
-
-    <!-- Page Hero (compact) -->
-    <div class="cart-page-header">
+  <main>
+    <!-- Header -->
+    <header class="page-hero">
       <div class="container">
-        <p class="t-label" data-reveal>Your selection</p>
-        <h1 class="cart-page-title" data-reveal data-reveal-delay="1">Your cart</h1>
+        <span class="t-label">Your Selections</span>
+        <h1>Shopping Cart</h1>
       </div>
-    </div>
+    </header>
 
-    <section class="cart-section section--sm">
+    <!-- ── Cart Grid Section ──────────────────────────────────── -->
+    <section class="section" style="padding-top: 4rem;">
       <div class="container">
-
-        <!-- Cart layout: items + summary -->
-        <div class="cart-layout" id="cart-layout">
-
-          <!-- Items column -->
-          <div class="cart-items" id="cart-items" aria-live="polite" aria-label="Cart items">
-            <!-- Rendered by JS -->
-          </div>
-
-          <!-- Summary column -->
-          <aside class="cart-summary" id="cart-summary" aria-label="Order summary">
-            <h2 class="cart-summary__title">Order summary</h2>
-
-            <div class="cart-summary__rows" id="summary-rows">
-              <!-- Rendered by JS -->
-            </div>
-
-            <div class="cart-summary__divider"></div>
-
-            <div class="cart-summary__total-row">
-              <span class="cart-summary__total-label">Total</span>
-              <span class="cart-summary__total-value" id="cart-total">$0.00</span>
-            </div>
-
-            <p class="cart-summary__note t-muted">Shipping and taxes calculated at checkout.</p>
-
-            <!-- Promo code -->
-            <div class="cart-promo">
-              <form class="cart-promo__form" id="promo-form" novalidate>
-                <label for="promo-input" class="form-label" style="font-size:0.8rem">Promo code</label>
-                <div class="cart-promo__row">
-                  <input
-                    type="text"
-                    id="promo-input"
-                    placeholder="GLOW10"
-                    class="cart-promo__input"
-                    autocomplete="off"
-                    style="text-transform:uppercase"
-                  />
-                  <button type="submit" class="btn btn--outline" style="white-space:nowrap;padding-inline:1rem;">Apply</button>
-                </div>
-                <span class="cart-promo__feedback" id="promo-feedback" role="alert"></span>
-              </form>
-            </div>
-
-            <button class="btn btn--primary cart-checkout-btn" id="checkout-btn">
-              Proceed to checkout
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </button>
-
-            <div class="cart-trust">
-              <div class="cart-trust__item">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--clr-ink-muted)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M8 1l1.6 3.2L13 4.8l-2.5 2.4.6 3.4L8 9l-3.1 1.6.6-3.4L3 4.8l3.4-.6L8 1z"/></svg>
-                <span>Free shipping over $80</span>
-              </div>
-              <div class="cart-trust__item">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--clr-ink-muted)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M13 4L6 11 3 8"/></svg>
-                <span>30-day returns</span>
-              </div>
-              <div class="cart-trust__item">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--clr-ink-muted)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><rect x="2" y="6" width="12" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 0 1 6 0v2"/></svg>
-                <span>Secure checkout</span>
-              </div>
-            </div>
-          </aside>
+        <div class="cart-layout" id="cart-grid-wrapper">
+          <!-- Rendered Dynamically via JS -->
         </div>
-
-        <!-- Empty cart state -->
-        <div class="cart-empty" id="cart-empty" hidden>
-          <div class="cart-empty__inner">
-            <div class="cart-empty__icon" aria-hidden="true">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--clr-border)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 5 8 16v37a5 5 0 0 0 5 5h38a5 5 0 0 0 5-5V16L48 5z"/><line x1="8" y1="16" x2="56" y2="16"/><path d="M42 27a10 10 0 0 1-20 0"/>
-              </svg>
-            </div>
-            <h2 class="cart-empty__title">Your cart is empty</h2>
-            <p class="cart-empty__body t-body">You haven't added anything yet. Start with our bestsellers — most customers begin with the Petal Toner Essence or Barrier Dew Cream.</p>
-            <a href="products.html" class="btn btn--primary">Browse products</a>
-          </div>
-        </div>
-
-        <!-- You might also like (always visible) -->
-        <div class="cart-recommendations" id="cart-recommendations">
-          <div class="section-header" style="margin-bottom:2rem;">
-            <div class="section-header__left">
-              <p class="t-label">Complete your ritual</p>
-              <h2 style="font-size:1.75rem;font-weight:300;margin-top:0.4rem;">You might also need.</h2>
-            </div>
-          </div>
-          <div class="recommendations-grid">
-            <article class="product-card" data-reveal>
-              <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Sérum Lumière" loading="lazy" class="img-cover">
-                <div class="product-card__quick-add">
-                  <button class="btn" data-add-to-cart data-name="Sérum Lumière" data-price="68">Quick add — $68</button>
-                </div>
-              </div>
-              <div class="product-card__info">
-                <h3 class="product-card__name">Sérum Lumière</h3>
-                <p class="product-card__desc">Vitamin C brightening treatment</p>
-                <p class="product-card__price">$68</p>
-              </div>
-            </article>
-
-            <article class="product-card" data-reveal data-reveal-delay="1">
-              <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/4041393/pexels-photo-4041393.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Petal Toner Essence" loading="lazy" class="img-cover">
-                <div class="product-card__quick-add">
-                  <button class="btn" data-add-to-cart data-name="Petal Toner Essence" data-price="42">Quick add — $42</button>
-                </div>
-              </div>
-              <div class="product-card__info">
-                <h3 class="product-card__name">Petal Toner Essence</h3>
-                <p class="product-card__desc">Rose + Centella first essence</p>
-                <p class="product-card__price">$42</p>
-              </div>
-            </article>
-
-            <article class="product-card" data-reveal data-reveal-delay="2">
-              <div class="product-card__image">
-              <img src="https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=480&h=640&fit=crop" alt="Midnight Repair Oil" loading="lazy" class="img-cover">
-                <div class="product-card__quick-add">
-                  <button class="btn" data-add-to-cart data-name="Midnight Repair Oil" data-price="76">Quick add — $76</button>
-                </div>
-              </div>
-              <div class="product-card__info">
-                <h3 class="product-card__name">Midnight Repair Oil</h3>
-                <p class="product-card__desc">Bakuchiol overnight renewal</p>
-                <p class="product-card__price">$76</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand">
-          <p class="footer__brand-name">Moonlight Étoile</p>
-          <p class="footer__tagline">Thoughtful skincare rooted in botanical science and radical transparency.</p>
-          <div class="footer__socials">
-            <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
-            <a href="#" class="footer__social-link" aria-label="Pinterest">Pi</a>
-            <a href="#" class="footer__social-link" aria-label="TikTok">Tk</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">Yt</a>
-          </div>
+        <div class="footer__brand-col">
+          <h3>Moonlight Étoile</h3>
+          <p>Luxurious skincare and cosmetics inspired by the stars, formulated to let your natural beauty glow beyond.</p>
         </div>
-        <div>
-          <p class="footer__col-title">Shop</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="products.html">All Products</a></li>
-            <li><a href="products.html">Serums</a></li>
-            <li><a href="products.html">Moisturisers</a></li>
+        
+        <div class="footer__col">
+          <h4>Collection</h4>
+          <ul role="list">
+            <li><a href="products.html?category=skincare">Skincare Base</a></li>
+            <li><a href="products.html?category=cosmetics">Cosmetics Core</a></li>
+            <li><a href="products.html?subcategory=lips">Lips & Tint</a></li>
+            <li><a href="products.html?tag=Bestseller">Bestselling Radiance</a></li>
           </ul>
         </div>
-        <div>
-          <p class="footer__col-title">Brand</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+        <div class="footer__col">
+          <h4>Customer Care</h4>
+          <ul role="list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html#faq">FAQ Help</a></li>
+            <li><a href="about.html#sustainability">Sustainability Sourcing</a></li>
+            <li><a href="about.html">Brand Origins</a></li>
           </ul>
         </div>
-        <div>
-          <p class="footer__col-title">Help</p>
-          <ul class="footer__col-links" role="list">
-            <li><a href="#">Shipping &amp; Returns</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+
+        <div class="footer__newsletter">
+          <h4>Be In The Circle</h4>
+          <p>Join for early launches and botanical wellness rituals.</p>
+          <form class="footer__newsletter-form" onsubmit="event.preventDefault(); window.MoonlightEtoile.showToast('Subscription saved!')">
+            <input type="email" class="footer__newsletter-input" placeholder="Your email address" required aria-label="Email Address">
+            <button type="submit" class="footer__newsletter-btn">&rarr;</button>
+          </form>
         </div>
       </div>
+
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 Moonlight Étoile. All rights reserved.</p>
-        <nav class="footer__legal" aria-label="Legal links">
+        <p>&copy; 2026 Moonlight Étoile Beauty. Sourced ethically. Cruelty-free certified.</p>
+        <div class="footer__bottom-links">
           <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </nav>
+          <a href="#">Terms & Conditions</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  
   <script>
-    /* ── Cart page renderer ── */
-    const SWATCHES = {
-      'Sérum Lumière':              'linear-gradient(145deg,#f2e4d8,#e8cfc4)',
-      'Barrier Dew Cream':          'linear-gradient(145deg,#e8e0d8,#d5cabe)',
-      'Petal Toner Essence':        'linear-gradient(145deg,#f0ddd9,#e4c9c2)',
-      'Midnight Repair Oil':        'linear-gradient(145deg,#eae0d0,#d8ccba)',
-      'Calm Peptide Serum':         'linear-gradient(145deg,#dde8e4,#c8ddd7)',
-      'HA Plump Serum':             'linear-gradient(145deg,#e8e0d8,#d5cabe)',
-      'Cloud Gel Moisturiser':      'linear-gradient(145deg,#eae0d0,#d8ccba)',
-      'Green Tea Microbiome Essence':'linear-gradient(145deg,#e4eee8,#cfe0d6)',
-      'Golden Jojoba Glow Oil':     'linear-gradient(145deg,#f5edd8,#ead8b8)',
-      'Kaolin Detox Mask':          'linear-gradient(145deg,#e8e0ee,#d8cce0)',
-      'Rose Glow Sleeping Mask':    'linear-gradient(145deg,#f0ddd9,#e8cfc4)',
-      'Sensitive Skin Balm':        'linear-gradient(145deg,#f5f0ea,#ede5d8)',
-    };
+    const wrapper = document.getElementById('cart-grid-wrapper');
+    let discountPercent = 0;
+    let promoCodeApplied = '';
 
-    function renderCart() {
-      const cart       = window.MoonlightEtoile.getCart();
-      const itemsEl    = document.getElementById('cart-items');
-      const summaryRows= document.getElementById('summary-rows');
-      const totalEl    = document.getElementById('cart-total');
-      const emptyEl    = document.getElementById('cart-empty');
-      const layoutEl   = document.getElementById('cart-layout');
+    // Main checkout/summary dynamic display refreshes
+    function refreshCartPage() {
+      const cart = window.MoonlightEtoile.getCart();
 
       if (cart.length === 0) {
-        emptyEl.hidden  = false;
-        layoutEl.style.display = 'none';
+        wrapper.innerHTML = `
+          <div class="cart-empty-state" style="grid-column: span 2;" data-reveal>
+            <h3>Your Cart is Empty</h3>
+            <p>Ready to discover your customized starry beauty ritual?</p>
+            <a href="products.html" class="btn btn--primary"><span>Shop the Collection</span></a>
+          </div>
+        `;
+        // Make sure scroll reveals trigger on empty state
+        const reveal = wrapper.querySelector('[data-reveal]');
+        if (reveal) requestAnimationFrame(() => reveal.classList.add('revealed'));
         return;
       }
 
-      emptyEl.hidden  = true;
-      layoutEl.style.display = '';
-
-      let subtotal = 0;
-
-      // Render items
-      itemsEl.innerHTML = cart.map(item => {
-        const price = parseFloat(item.price);
-        const lineTotal = price * item.qty;
-        subtotal += lineTotal;
-        const swatch = SWATCHES[item.name] || 'linear-gradient(145deg,#f5f0ea,#ede5d8)';
+      // 1. Render Product Items list
+      const itemsHtml = cart.map(item => {
+        const shadeText = item.shade ? `<p class="cart-item__shade">Shade: ${item.shade}</p>` : '';
+        const lineTotal = item.price * item.qty;
+        
         return `
-          <div class="cart-item" data-key="${escHtml(item.key)}">
-            <div class="cart-item__image" aria-hidden="true" style="background:${swatch};"></div>
-            <div class="cart-item__details">
-              <h3 class="cart-item__name">${escHtml(item.name)}</h3>
-              ${item.variant ? `<p class="cart-item__variant t-muted">${escHtml(item.variant)}</p>` : ''}
-              <p class="cart-item__price">$${price.toFixed(2)}</p>
-            </div>
-            <div class="cart-item__controls">
-              <div class="qty-control" role="group" aria-label="Quantity for ${escHtml(item.name)}">
-                <button class="qty-btn" data-action="decrease" data-key="${escHtml(item.key)}" aria-label="Decrease quantity">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="6" x2="10" y2="6"/></svg>
-                </button>
-                <span class="qty-value">${item.qty}</span>
-                <button class="qty-btn" data-action="increase" data-key="${escHtml(item.key)}" aria-label="Increase quantity">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg>
-                </button>
+          <article class="cart-item">
+            <div class="cart-item__product">
+              <div class="cart-item__img-wrap">
+                <img src="${item.image}" alt="${item.name}">
               </div>
-              <p class="cart-item__line-total">$${lineTotal.toFixed(2)}</p>
-              <button class="cart-item__remove" data-key="${escHtml(item.key)}" aria-label="Remove ${escHtml(item.name)}">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>
-              </button>
+              <div class="cart-item__details">
+                <h3>${item.name}</h3>
+                ${shadeText}
+              </div>
             </div>
-          </div>
+
+            <div class="cart-item__price">&#8369;${item.price.toLocaleString()}</div>
+
+            <div class="cart-item__qty">
+              <div class="qty-selector">
+                <button class="qty-btn" onclick="updateQty('${item.key}', ${item.qty - 1})" aria-label="Decrease quantity">&minus;</button>
+                <input type="text" class="qty-input" value="${item.qty}" readonly>
+                <button class="qty-btn" onclick="updateQty('${item.key}', ${item.qty + 1})" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="cart-item__subtotal">
+              <span>&#8369;${lineTotal.toLocaleString()}</span>
+              <button class="cart-item__remove-btn" onclick="removeItem('${item.key}')" aria-label="Remove item">Remove</button>
+            </div>
+          </article>
         `;
       }).join('');
 
-      // Render summary
-      const shipping = subtotal >= 80 ? 0 : 8.5;
-      summaryRows.innerHTML = `
-        <div class="summary-row">
-          <span>Subtotal (${cart.reduce((s,i)=>s+i.qty,0)} items)</span>
-          <span>$${subtotal.toFixed(2)}</span>
+      // 2. Calculations
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const discount = Math.round(subtotal * discountPercent);
+      const shipping = subtotal >= 1500 ? 0 : 150;
+      const total = subtotal - discount + shipping;
+
+      const shippingText = shipping === 0 ? 'Complimentary' : `&#8369;${shipping.toLocaleString()}`;
+      const discountRowHtml = discount > 0 ? `
+        <div class="summary-price-row" style="color: var(--color-rose); font-weight: 500;">
+          <span class="summary-label">Voucher Discount (${promoCodeApplied})</span>
+          <span class="summary-value">&minus;&#8369;${discount.toLocaleString()}</span>
         </div>
-        <div class="summary-row">
-          <span>Shipping</span>
-          <span>${shipping === 0 ? '<span class="summary-free">Free</span>' : '$' + shipping.toFixed(2)}</span>
+      ` : '';
+
+      wrapper.innerHTML = `
+        <!-- Left: Product List Panel -->
+        <div class="cart-items-panel" data-reveal>
+          <div class="cart-header-row">
+            <span>Product</span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Total</span>
+          </div>
+          ${itemsHtml}
+        </div>
+
+        <!-- Right: Invoice Order Summary checkout -->
+        <div class="cart-summary-card" data-reveal data-reveal-delay="1">
+          <h3>Order Summary</h3>
+          
+          <!-- Promo Voucher input -->
+          <div class="promo-input-row">
+            <input type="text" id="promo-code-input" placeholder="Promo code" value="${promoCodeApplied}" aria-label="Promo code">
+            <button onclick="applyPromoCode()"><span>Apply</span></button>
+          </div>
+
+          <div class="summary-price-row">
+            <span class="summary-label">Subtotal</span>
+            <span class="summary-value">&#8369;${subtotal.toLocaleString()}</span>
+          </div>
+
+          ${discountRowHtml}
+
+          <div class="summary-price-row">
+            <span class="summary-label">Scented Express Shipping</span>
+            <span class="summary-value">${shippingText}</span>
+          </div>
+
+          <div class="summary-price-row total">
+            <span class="summary-label dark">Order Total</span>
+            <span class="summary-value">&#8369;${total.toLocaleString()}</span>
+          </div>
+
+          <button class="btn btn--primary checkout-btn" onclick="handleCheckout()">
+            <span>Complete Order Checkout</span>
+          </button>
         </div>
       `;
-      if (shipping > 0 && subtotal < 80) {
-        summaryRows.innerHTML += `
-          <p class="summary-free-nudge">Add $${(80 - subtotal).toFixed(2)} more for free shipping.</p>
-        `;
-      }
-      totalEl.textContent = '$' + (subtotal + shipping).toFixed(2);
 
-      // Bind qty / remove buttons
-      document.querySelectorAll('.qty-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const key    = btn.dataset.key;
-          const action = btn.dataset.action;
-          const stored = window.MoonlightEtoile.getCart();
-          const item   = stored.find(i => i.key === key);
-          if (!item) return;
-          if (action === 'increase') item.qty++;
-          if (action === 'decrease') {
-            item.qty--;
-            if (item.qty <= 0) {
-              stored.splice(stored.indexOf(item), 1);
-            }
-          }
-          localStorage.setItem('MoonlightEtoile_cart', JSON.stringify(stored));
-          window.MoonlightEtoile.updateCartBadge?.();
-          updateCartBadgeManual();
-          renderCart();
-        });
-      });
-
-      document.querySelectorAll('.cart-item__remove').forEach(btn => {
-        btn.addEventListener('click', () => {
-          window.MoonlightEtoile.removeFromCart(btn.dataset.key);
-          renderCart();
-          window.MoonlightEtoile.showToast('Item removed from cart');
-        });
-      });
+      // Trigger scroll reveals
+      const reveals = wrapper.querySelectorAll('[data-reveal]');
+      reveals.forEach(el => requestAnimationFrame(() => el.classList.add('revealed')));
     }
 
-    function updateCartBadgeManual() {
-      const cart  = window.MoonlightEtoile.getCart();
-      const total = cart.reduce((s,i) => s+i.qty, 0);
-      document.querySelectorAll('.cart-badge').forEach(b => {
-        b.textContent = total;
-        b.style.display = total > 0 ? 'flex' : 'none';
-      });
+    // Modify Quantities handler
+    function updateQty(key, qty) {
+      window.MoonlightEtoile.updateCartQty(key, qty);
     }
 
-    function escHtml(str) {
-      return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    // Remove Item handler
+    function removeItem(key) {
+      window.MoonlightEtoile.removeFromCart(key);
     }
 
-    renderCart();
+    // Apply Coupon Code
+    function applyPromoCode() {
+      const codeInput = document.getElementById('promo-code-input');
+      const val = codeInput.value.toUpperCase().trim();
 
-    // Promo code
-    const promoForm = document.getElementById('promo-form');
-    const promoFeedback = document.getElementById('promo-feedback');
-    const VALID_CODES = { 'GLOW10': 10, 'RITUAL15': 15, 'WELCOME': 20 };
-
-    promoForm?.addEventListener('submit', e => {
-      e.preventDefault();
-      const code = document.getElementById('promo-input').value.trim().toUpperCase();
-      if (VALID_CODES[code]) {
-        promoFeedback.textContent = `Code applied! ${VALID_CODES[code]}% off at checkout.`;
-        promoFeedback.style.color = 'var(--clr-rose)';
+      if (val === 'MOONLIGHT20' || val === 'STARGLOW') {
+        discountPercent = 0.2;
+        promoCodeApplied = val;
+        window.MoonlightEtoile.showToast('Voucher code 20% Discount applied successfully!');
+      } else if (val === '') {
+        discountPercent = 0;
+        promoCodeApplied = '';
       } else {
-        promoFeedback.textContent = 'That code isn\'t valid. Try GLOW10.';
-        promoFeedback.style.color = '#c0392b';
+        window.MoonlightEtoile.showToast('Invalid promo code. Try MOONLIGHT20');
       }
-    });
+      refreshCartPage();
+    }
 
-    // Checkout
-    document.getElementById('checkout-btn')?.addEventListener('click', () => {
-      window.MoonlightEtoile.showToast('Checkout coming soon!');
-    });
+    // Final order checkout completion
+    function handleCheckout() {
+      window.MoonlightEtoile.showToast('Connecting securely to Moonlight Checkout...');
+      setTimeout(() => {
+        window.MoonlightEtoile.showToast('Order completed! Thank you for glowing with us.');
+        localStorage.removeItem('MoonlightEtoile_cart');
+        window.MoonlightEtoile.updateCartBadge();
+        refreshCartPage();
+      }, 1500);
+    }
+
+    // Mount page context listener to global e-comm hooks
+    window.MoonlightEtoile.refreshCartPage = refreshCartPage;
+
+    // Run on startup
+    refreshCartPage();
   </script>
+
 </body>
 </html>
